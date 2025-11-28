@@ -37,3 +37,4 @@ data/export/
 # Documentation (optional - remove if you want to track these)
 *.md
 !README.md
+!CHANGELOG.md
