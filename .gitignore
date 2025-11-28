@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+venv/
+.venv/
+env/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Project Specific
+*.log
+tmp*
+temp*
+backup/
+*_backup.py
+*_backup_*.py
+*_backup.ini
+*.bak
+*.spec
+dist/
+build/
+*.code-workspace
+*.lps
+
+# Data directories
+data/
+data/export/
+
+# Documentation (optional - remove if you want to track these)
+*.md
+!README.md

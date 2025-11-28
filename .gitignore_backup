@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*build/
+*dist/
+*.egg-info/
+*.spec
+
+# VSCode
+.vscode/*
+!.vscode/launch.json
+!.vscode/tasks.json
+.history/
+*.code-workspace
+MyWorkspace.code.lps
+
+# Visual Studio
+.vs/
+*.sln.docstates
+*.suo
+*.user
+*.vcxproj.filters
+*.vcxproj.user
+
+# Temporary files
+*.tmp
+*.temp
+temp.ln
+tmp.txt
+test_value.txt
+
+# Backup files
+*backup*
+/backup/
+/data/backup/
+*.bak
+
+# Logs
+*.log
