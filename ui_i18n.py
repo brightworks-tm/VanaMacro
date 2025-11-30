@@ -127,8 +127,8 @@ _TEXTS = {
         "btn_close": "閉じる",
         
         # About dialog
-        "about_title": "VanaMacro について",
-        "about_text": "VanaMacro\nマクロ編集・エクスポート支援ツール\n\nブック/セット/マクロの管理、FFXIからの取り込み、\nFFXI形式へのエクスポートを1つの画面で操作できます。",
+        "about_title": "VanaMacro",
+        "about_text": "VanaMacro v1.0.0\n\nMacro Editor for Final Fantasy XI\n\n© 2025 VanaMacro Project\n\nPython 3.13+ / PyQt6\nhttps://github.com/your-repo/VanaMacro",
         
         # Shortcuts dialog
         "action_shortcuts": "ショートカット一覧...",
@@ -335,8 +335,8 @@ Ctrl+T : 定型文リスト""",
         "btn_close": "Close",
         
         # About dialog
-        "about_title": "About VanaMacro",
-        "about_text": "VanaMacro\nMacro Editing & Export Support Tool\n\nManage Books/Sets/Macros, import from FFXI,\nand export to FFXI format - all in one screen.",
+        "about_title": "VanaMacro",
+        "about_text": "VanaMacro v1.0.0\n\nMacro Editor for Final Fantasy XI\n\n© 2025 VanaMacro Project\n\nPython 3.13+ / PyQt6\nhttps://github.com/your-repo/VanaMacro",
         
         # Shortcuts dialog
         "action_shortcuts": "Keyboard Shortcuts...",

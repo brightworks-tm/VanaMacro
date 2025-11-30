@@ -114,6 +114,9 @@ QMenuBar {
     background-color: #18100b;
     color: #e5d6b1;
 }
+QMenuBar::item {
+    background-color: transparent;
+}
 QMenuBar::item:selected {
     background-color: #3a4f73;
     color: #f6f6f6;
@@ -241,6 +244,9 @@ QMenuBar {
     background-color: #1e1e1e;
     color: #d4d4d4;
 }
+QMenuBar::item {
+    background-color: transparent;
+}
 QMenuBar::item:selected {
     background-color: #094771;
     color: #ffffff;
@@ -256,8 +262,21 @@ QMenu::item:selected {
 }
 """
 
+# Minimal styling to fix QMenuBar artifacts in Base theme
+BASE_QSS = """
+QMenuBar {
+    background-color: transparent;
+}
+QMenuBar::item {
+    background-color: transparent;
+}
+QMenuBar::item:selected {
+    background-color: #cce8ff;
+}
+"""
+
 THEMES = {
-    "Base": "",
+    "Base": BASE_QSS,
     "Dark": DARK_QSS,
     "Game": FFXI_QSS,
 }

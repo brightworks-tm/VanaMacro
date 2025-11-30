@@ -1,7 +1,7 @@
 {
   "version": 1,
   "character_id": "aeebde",
-  "updated_at": "2025-11-28T19:06:51.631717",
+  "updated_at": "2025-11-28T23:37:09.439435",
   "books": [
     {
       "name": "PLD",
@@ -4341,7 +4341,7 @@
             {
               "name": "デジR",
               "lines": [
-                "<</equip>> <<左手の指>> デジョンリング <wait 1>",
+                "<</equip>> <<L.ring>> デジョンリング <wait 1>",
                 "/console send Leabra /equip 左手の指 デジョンリング <wait1>",
                 "/console send Accura /equip 左手の指 デジョンリング <wait9>",
                 "<</item>> デジョンリング <me> <wait 1>",
@@ -4375,11 +4375,11 @@
               "name": "インスニ",
               "lines": [
                 "/con cancel 69,71",
-                "/console send Leabra /magic <<スニーク>> Vargo <wait 7>",
-                "/console send Leabra /magic <<インビジ>> Vargo <wait 7>",
+                "/console send Leabra /magic <<Sneak>> Vargo <wait 7>",
+                "/console send Leabra /magic <<Invisible>> Vargo <wait 7>",
                 "/console send Leabra cancel 71",
-                "/console send Leabra /magic <<スニーク>> <me> <wait 7>",
-                "/console send Leabra /magic <<インビジ>> <me>"
+                "/console send Leabra /magic <<Sneak>> <me> <wait 7>",
+                "/console send Leabra /magic <<Invisible>> <me>"
               ]
             },
             {
@@ -4409,7 +4409,7 @@
               "lines": [
                 "/console cancel 71",
                 "/wait 1",
-                "<</jobability>> <<スペクトラルジグ>> <me>",
+                "<</jobability>> <<Spectral Jig>> <me>",
                 "",
                 "",
                 ""
@@ -4475,7 +4475,7 @@
             {
               "name": "Ｄホラ",
               "lines": [
-                "<</equip>> <<左手の指>> Ｄ．ホラリング",
+                "<</equip>> <<L.ring>> Ｄ．ホラリング",
                 "/console send Leabra /equip 左手の指 Ｄ．ホラリング",
                 "/console send Accura /equip 左手の指 Ｄ．ホラリング <wait10>",
                 "<</item>> Ｄ．ホラリング <me> <wait 1>",
@@ -4497,7 +4497,7 @@
             {
               "name": "デジR",
               "lines": [
-                "<</equip>> <<左手の指>> デジョンリング <wait 1>",
+                "<</equip>> <<L.ring>> デジョンリング <wait 1>",
                 "/console send Leabra /equip 左手の指 デジョンリング <wait1>",
                 "/console send Accura /equip 左手の指 デジョンリング <wait9>",
                 "<</item>> デジョンリング <me> <wait 1>",
@@ -4531,11 +4531,11 @@
               "name": "インスニ",
               "lines": [
                 "/con cancel 69,71",
-                "/console send Accura /magic <<スニーク>> Vargo <wait 7>",
-                "/console send Accura /magic <<インビジ>> Vargo <wait 7>",
+                "/console send Accura /magic <<Sneak>> Vargo <wait 7>",
+                "/console send Accura /magic <<Invisible>> Vargo <wait 7>",
                 "/console send Accura cancel 71",
-                "/console send Accura /magic <<スニーク>> <me> <wait 7>",
-                "/console send Accura /magic <<インビジ>> <me>"
+                "/console send Accura /magic <<Sneak>> <me> <wait 7>",
+                "/console send Accura /magic <<Invisible>> <me>"
               ]
             },
             {
@@ -41277,9 +41277,9 @@
             {
               "name": "①②連携",
               "lines": [
-                "<</jobability>> <<震天動地の章>> <me> <wait2>",
+                "<</jobability>> <<Immanence>> <me> <wait2>",
                 "/con Mag_1011-2 <wait4>",
-                "<</jobability>> <<震天動地の章>> <me> <wait2>",
+                "<</jobability>> <<Immanence>> <me> <wait2>",
                 "/con Mag_1012-2",
                 "",
                 ""
@@ -41400,9 +41400,9 @@
             {
               "name": "黒グリ",
               "lines": [
-                "/ja <<黒のグリモア>> <me> <wait2>",
-                "/ja <<黒の補遺>> <me> <wait1>",
-                "<</recast>> <<戦術魔道書>>",
+                "/ja <<Dark Arts>> <me> <wait2>",
+                "/ja <<Addendum: Black>> <me> <wait1>",
+                "<</recast>> <<Stratagems>>",
                 "",
                 "",
                 ""
@@ -41471,9 +41471,9 @@
             {
               "name": "グラビデ",
               "lines": [
-                "/ja <<疾風迅雷の章>> <me> <wait1>",
-                "/ja <<精霊光来の章>> <me> <wait1>",
-                "/ma <<グラビデ>> <stnpc>",
+                "/ja <<Alacrity>> <me> <wait1>",
+                "/ja <<Manifestation>> <me> <wait1>",
+                "/ma <<Gravity>> <stnpc>",
                 "",
                 "",
                 ""
@@ -41482,9 +41482,9 @@
             {
               "name": "バインド",
               "lines": [
-                "/ja <<疾風迅雷の章>> <me> <wait1>",
-                "/ja <<精霊光来の章>> <me> <wait1>",
-                "/ma <<バインド>> <stnpc>",
+                "/ja <<Alacrity>> <me> <wait1>",
+                "/ja <<Manifestation>> <me> <wait1>",
+                "/ma <<Bind>> <stnpc>",
                 "",
                 "",
                 ""
@@ -41493,7 +41493,7 @@
             {
               "name": "グラビ単",
               "lines": [
-                "/ma <<グラビデ>> <stnpc>",
+                "/ma <<Gravity>> <stnpc>",
                 "",
                 "",
                 "",
@@ -41504,7 +41504,7 @@
             {
               "name": "バイン単",
               "lines": [
-                "/ma <<バインド>> <stnpc>",
+                "/ma <<Bind>> <stnpc>",
                 "",
                 "",
                 "",
@@ -41515,7 +41515,7 @@
             {
               "name": "サイレス",
               "lines": [
-                "/ma <<サイレス>> <stnpc>",
+                "/ma <<Silence>> <stnpc>",
                 "",
                 "",
                 "",
@@ -41594,10 +41594,10 @@
             {
               "name": "黒グリ",
               "lines": [
-                "<</equip>> <<胴>> ＡＢガウン+2",
-                "/ja <<黒のグリモア>> <me> <wait2>",
-                "/ja <<黒の補遺>> <me> <wait1>",
-                "<</recast>> <<戦術魔道書>>",
+                "<</equip>> <<body>> ＡＢガウン+2",
+                "/ja <<Dark Arts>> <me> <wait2>",
+                "/ja <<Addendum: Black>> <me> <wait1>",
+                "<</recast>> <<Stratagems>>",
                 "<</equipset>> 21",
                 ""
               ]
@@ -41605,10 +41605,10 @@
             {
               "name": "白グリ",
               "lines": [
-                "<</equip>> <<胴>> ＡＢガウン+2",
-                "/ja <<白のグリモア>> <me> <wait2>",
-                "/ja <<白の補遺>> <me> <wait1>",
-                "<</recast>> <<戦術魔道書>>",
+                "<</equip>> <<body>> ＡＢガウン+2",
+                "/ja <<Light Arts>> <me> <wait2>",
+                "/ja <<Addendum: White>> <me> <wait1>",
+                "<</recast>> <<Stratagems>>",
                 "<</equipset>> 21",
                 ""
               ]
@@ -41643,8 +41643,8 @@
             {
               "name": "白グリ",
               "lines": [
-                "<</equip>> <<胴>> ＡＢガウン+2",
-                "/ja <<白のグリモア>> <me> <wait2>",
+                "<</equip>> <<body>> ＡＢガウン+2",
+                "/ja <<Light Arts>> <me> <wait2>",
                 "<</equipset>> 21",
                 "",
                 "",
@@ -41654,7 +41654,7 @@
             {
               "name": "白補遺",
               "lines": [
-                "<</jobability>> <<白の補遺>> <me>",
+                "<</jobability>> <<Addendum: White>> <me>",
                 "",
                 "",
                 "",
@@ -41665,7 +41665,7 @@
             {
               "name": "女神降臨",
               "lines": [
-                "<</jobability>> <<女神降臨の章>> <me>",
+                "<</jobability>> <<Accession>> <me>",
                 "",
                 "",
                 "",
@@ -41676,7 +41676,7 @@
             {
               "name": "令狸",
               "lines": [
-                "<</jobability>> <<令狸執鼠の章>> <me>",
+                "<</jobability>> <<Perpetuance>> <me>",
                 "",
                 "",
                 "",
@@ -41688,7 +41688,7 @@
               "name": "雷陣",
               "lines": [
                 "<</equipset>> 24",
-                "/ma <<疾雷の陣>>II <me> <wait2>",
+                "/ma <<Thunderstorm>>II <me> <wait2>",
                 "<</equipset>> 21",
                 "",
                 "",
@@ -41699,7 +41699,7 @@
               "name": "ヘイスト",
               "lines": [
                 "<</equipset>> 24",
-                "/ma <<ヘイスト>> <me> <wait5>",
+                "/ma <<Haste>> <me> <wait5>",
                 "<</equipset>> 21 echo",
                 "",
                 "",
@@ -41709,22 +41709,22 @@
             {
               "name": "ファラ",
               "lines": [
-                "/ja <<白のグリモア>> <stpc> <wait1>",
+                "/ja <<Light Arts>> <stpc> <wait1>",
                 "<</equipset>> 24 echo",
-                "/ja <<女神降臨の章>> <me> <wait2>",
-                "/ja <<令狸執鼠の章>> <me> <wait2>",
-                "/ma <<ファランクス>> <me> <wait5>",
+                "/ja <<Accession>> <me> <wait2>",
+                "/ja <<Perpetuance>> <me> <wait2>",
+                "/ma <<Phalanx>> <me> <wait5>",
                 "<</equipset>> 21 echo"
               ]
             },
             {
               "name": "ストスキ",
               "lines": [
-                "/ja <<白のグリモア>> <stpc> <wait1>",
+                "/ja <<Light Arts>> <stpc> <wait1>",
                 "<</equipset>> 24 echo",
-                "/ja <<女神降臨の章>> <me> <wait2>",
-                "/ja <<令狸執鼠の章>> <me> <wait2>",
-                "/ma <<ストンスキン>> <me> <wait5>",
+                "/ja <<Accession>> <me> <wait2>",
+                "/ja <<Perpetuance>> <me> <wait2>",
+                "/ma <<Stoneskin>> <me> <wait5>",
                 "<</equipset>> 21 echo"
               ]
             },
@@ -41732,7 +41732,7 @@
               "name": "ケアル",
               "lines": [
                 "<</equipset>> 22",
-                "/ma <<ケアル>>IV <stpc> <wait5>",
+                "/ma <<Cure>>IV <stpc> <wait5>",
                 "<</equipset>> 21 echo",
                 "",
                 "",
@@ -41743,10 +41743,10 @@
               "name": "リジェV",
               "lines": [
                 "<</equipset>> 24 echo",
-                "<</equip>> <<背>> ブックワームケープ",
-                "/ja <<女神降臨の章>> <me> <wait2>",
-                "/ja <<令狸執鼠の章>> <me> <wait2>",
-                "/ma <<リジェネ>>V <me> <wait5>",
+                "<</equip>> <<back>> ブックワームケープ",
+                "/ja <<Accession>> <me> <wait2>",
+                "/ja <<Perpetuance>> <me> <wait2>",
+                "/ma <<Regen>>V <me> <wait5>",
                 "<</equipset>> 21 echo"
               ]
             }
@@ -41755,10 +41755,10 @@
             {
               "name": "黒グリ",
               "lines": [
-                "<</equip>> <<胴>> ＡＢガウン+2",
-                "/ja <<黒のグリモア>> <me> <wait2>",
-                "/ja <<黒の補遺>> <me> <wait1>",
-                "<</recast>> <<戦術魔道書>>",
+                "<</equip>> <<body>> ＡＢガウン+2",
+                "/ja <<Dark Arts>> <me> <wait2>",
+                "/ja <<Addendum: Black>> <me> <wait1>",
+                "<</recast>> <<Stratagems>>",
                 "<</equipset>> 21",
                 ""
               ]
@@ -41767,9 +41767,9 @@
               "name": "FC",
               "lines": [
                 "<</equipset>> 22",
-                "/p <recast=<<震天動地の章>>>",
-                "<</recast>> <<土門の計>>",
-                "<</recast>> <<氷門の計>>",
+                "/p <recast=<<Immanence>>>",
+                "<</recast>> <<Geohelix>>",
+                "<</recast>> <<Cryohelix>>",
                 "",
                 ""
               ]
@@ -41777,20 +41777,20 @@
             {
               "name": "雷連携",
               "lines": [
-                "<</jobability>> <<震天動地の章>> <me> <wait1>",
-                "/p ①①①  雷<<連携>> サンダーMB <<準備中です。>> <call10>",
-                "/ma <<ブリザド>> <t> <wait4>",
-                "<</jobability>> <<震天動地の章>> <me> <wait2>",
-                "/p ②②②  雷<<連携>> サンダーMB  発動します。 <call11>",
-                "/ma <<水門の計>> <t>"
+                "<</jobability>> <<Immanence>> <me> <wait1>",
+                "/p ①①①  雷<<Skillchain>> サンダーMB <<I'm not ready.>> <call10>",
+                "/ma <<Blizzard>> <t> <wait4>",
+                "<</jobability>> <<Immanence>> <me> <wait2>",
+                "/p ②②②  雷<<Skillchain>> サンダーMB  発動します。 <call11>",
+                "/ma <<Hydrohelix>> <t>"
               ]
             },
             {
               "name": "雷計MB",
               "lines": [
                 "/<</equipset>> 22",
-                "<</jobability>> <<気炎万丈の章>> <me> <wait1>",
-                "/ma <<雷門の計>>II <t> <wait1>",
+                "<</jobability>> <<Ebullience>> <me> <wait1>",
+                "/ma <<Ionohelix>>II <t> <wait1>",
                 "<</equipset>> 25",
                 "",
                 ""
@@ -41799,8 +41799,8 @@
             {
               "name": "雷5",
               "lines": [
-                "<</equip>> <<頭>> ＡＢボンネット+2",
-                "/ma <<サンダー>>V <t> <wait3>",
+                "<</equip>> <<head>> ＡＢボンネット+2",
+                "/ma <<Thunder>>V <t> <wait3>",
                 "<</equipset>> 21",
                 "",
                 "",
@@ -41810,8 +41810,8 @@
             {
               "name": "雷4",
               "lines": [
-                "<</equip>> <<頭>> ＡＢボンネット+2",
-                "/ma <<サンダー>>IV <t> <wait3>",
+                "<</equip>> <<head>> ＡＢボンネット+2",
+                "/ma <<Thunder>>IV <t> <wait3>",
                 "<</equipset>> 21",
                 "",
                 "",
@@ -41821,9 +41821,9 @@
             {
               "name": "アスピル",
               "lines": [
-                "<</equip>> <<頭>> ＡＢボンネット+2",
-                "<</equip>> <<腰>> 風鳥の帯",
-                "/ma <<アスピル>>II <t> <wait3>",
+                "<</equip>> <<head>> ＡＢボンネット+2",
+                "<</equip>> <<waist>> 風鳥の帯",
+                "/ma <<Aspir>>II <t> <wait3>",
                 "<</equipset>> 21",
                 "",
                 ""
@@ -41832,7 +41832,7 @@
             {
               "name": "机上演習",
               "lines": [
-                "<</jobability>> <<机上演習>> <me> <wait2>",
+                "<</jobability>> <<Sublimation>> <me> <wait2>",
                 "<</equipset>> 21",
                 "",
                 "",
@@ -41870,8 +41870,8 @@
             {
               "name": "白グリ",
               "lines": [
-                "<</equip>> <<胴>> ＡＢガウン+2",
-                "/ja <<白のグリモア>> <me> <wait2>",
+                "<</equip>> <<body>> ＡＢガウン+2",
+                "/ja <<Light Arts>> <me> <wait2>",
                 "<</equipset>> 21",
                 "",
                 "",
@@ -41881,7 +41881,7 @@
             {
               "name": "白補遺",
               "lines": [
-                "<</jobability>> <<白の補遺>> <me>",
+                "<</jobability>> <<Addendum: White>> <me>",
                 "",
                 "",
                 "",
@@ -41892,7 +41892,7 @@
             {
               "name": "女神降臨",
               "lines": [
-                "<</jobability>> <<女神降臨の章>> <me>",
+                "<</jobability>> <<Accession>> <me>",
                 "",
                 "",
                 "",
@@ -41903,7 +41903,7 @@
             {
               "name": "令狸",
               "lines": [
-                "<</jobability>> <<令狸執鼠の章>> <me>",
+                "<</jobability>> <<Perpetuance>> <me>",
                 "",
                 "",
                 "",
@@ -41915,7 +41915,7 @@
               "name": "氷陣",
               "lines": [
                 "<</equipset>> 24",
-                "/ma <<吹雪の陣>>II <me> <wait2>",
+                "/ma <<Hailstorm>>II <me> <wait2>",
                 "<</equipset>> 21",
                 "",
                 "",
@@ -41926,7 +41926,7 @@
               "name": "ヘイスト",
               "lines": [
                 "<</equipset>> 24",
-                "/ma <<ヘイスト>> <me> <wait5>",
+                "/ma <<Haste>> <me> <wait5>",
                 "<</equipset>> 21 echo",
                 "",
                 "",
@@ -41936,22 +41936,22 @@
             {
               "name": "ファラ",
               "lines": [
-                "/ja <<白のグリモア>> <stpc> <wait1>",
+                "/ja <<Light Arts>> <stpc> <wait1>",
                 "<</equipset>> 24 echo",
-                "/ja <<女神降臨の章>> <me> <wait2>",
-                "/ja <<令狸執鼠の章>> <me> <wait2>",
-                "/ma <<ファランクス>> <me> <wait5>",
+                "/ja <<Accession>> <me> <wait2>",
+                "/ja <<Perpetuance>> <me> <wait2>",
+                "/ma <<Phalanx>> <me> <wait5>",
                 "<</equipset>> 21 echo"
               ]
             },
             {
               "name": "ストスキ",
               "lines": [
-                "/ja <<白のグリモア>> <stpc> <wait1>",
+                "/ja <<Light Arts>> <stpc> <wait1>",
                 "<</equipset>> 24 echo",
-                "/ja <<女神降臨の章>> <me> <wait2>",
-                "/ja <<令狸執鼠の章>> <me> <wait2>",
-                "/ma <<ストンスキン>> <me> <wait5>",
+                "/ja <<Accession>> <me> <wait2>",
+                "/ja <<Perpetuance>> <me> <wait2>",
+                "/ma <<Stoneskin>> <me> <wait5>",
                 "<</equipset>> 21 echo"
               ]
             },
@@ -41959,7 +41959,7 @@
               "name": "ケアル",
               "lines": [
                 "<</equipset>> 22",
-                "/ma <<ケアル>>IV <stpc> <wait5>",
+                "/ma <<Cure>>IV <stpc> <wait5>",
                 "<</equipset>> 21 echo",
                 "",
                 "",
@@ -41970,10 +41970,10 @@
               "name": "リジェV",
               "lines": [
                 "<</equipset>> 24 echo",
-                "<</equip>> <<背>> ブックワームケープ",
-                "/ja <<女神降臨の章>> <me> <wait2>",
-                "/ja <<令狸執鼠の章>> <me> <wait2>",
-                "/ma <<リジェネ>>V <me> <wait5>",
+                "<</equip>> <<back>> ブックワームケープ",
+                "/ja <<Accession>> <me> <wait2>",
+                "/ja <<Perpetuance>> <me> <wait2>",
+                "/ma <<Regen>>V <me> <wait5>",
                 "<</equipset>> 21 echo"
               ]
             }
@@ -41982,10 +41982,10 @@
             {
               "name": "黒グリ",
               "lines": [
-                "<</equip>> <<胴>> ＡＢガウン+2",
-                "/ja <<黒のグリモア>> <me> <wait2>",
-                "/ja <<黒の補遺>> <me> <wait1>",
-                "<</recast>> <<戦術魔道書>>",
+                "<</equip>> <<body>> ＡＢガウン+2",
+                "/ja <<Dark Arts>> <me> <wait2>",
+                "/ja <<Addendum: Black>> <me> <wait1>",
+                "<</recast>> <<Stratagems>>",
                 "<</equipset>> 21",
                 ""
               ]
@@ -41994,41 +41994,41 @@
               "name": "FC",
               "lines": [
                 "<</equipset>> 22",
-                "/p <recast=<<震天動地の章>>>",
-                "<</recast>> <<光門の計>>",
-                "<</recast>> <<土門の計>>",
-                "<</recast>> <<氷門の計>>",
+                "/p <recast=<<Immanence>>>",
+                "<</recast>> <<Luminohelix>>",
+                "<</recast>> <<Geohelix>>",
+                "<</recast>> <<Cryohelix>>",
                 ""
               ]
             },
             {
               "name": "湾曲",
               "lines": [
-                "<</jobability>> <<震天動地の章>> <me> <wait 1>",
-                "/p ①①①  <<湾曲>><<連携>>  <<準備中です。>> <call10>",
-                "/ma <<光門の計>> <t> <wait 6>",
-                "<</jobability>> <<震天動地の章>> <me> <wait 1>",
-                "/p ②②②  <<湾曲>><<連携>>   発動します。 <call11>",
-                "/ma <<土門の計>> <t>"
+                "<</jobability>> <<Immanence>> <me> <wait 1>",
+                "/p ①①①  <<Distortion>><<Skillchain>>  <<I'm not ready.>> <call10>",
+                "/ma <<Luminohelix>> <t> <wait 6>",
+                "<</jobability>> <<Immanence>> <me> <wait 1>",
+                "/p ②②②  <<Distortion>><<Skillchain>>   発動します。 <call11>",
+                "/ma <<Geohelix>> <t>"
               ]
             },
             {
               "name": "氷連携",
               "lines": [
-                "<</jobability>> <<震天動地の章>> <me> <wait1>",
-                "/p ①①①  <<氷>><<連携>> <<ブリザド>>MB <<準備中です。>> <call10>",
-                "/ma <<ウォータ>> <t> <wait4>",
-                "<</jobability>> <<震天動地の章>> <me> <wait2>",
-                "/p ②②②  <<氷>><<連携>> <<ブリザド>>MB  発動します。 <call11>",
-                "/ma <<氷門の計>> <t>"
+                "<</jobability>> <<Immanence>> <me> <wait1>",
+                "/p ①①①  <<ice>><<Skillchain>> <<Blizzard>>MB <<I'm not ready.>> <call10>",
+                "/ma <<Water>> <t> <wait4>",
+                "<</jobability>> <<Immanence>> <me> <wait2>",
+                "/p ②②②  <<ice>><<Skillchain>> <<Blizzard>>MB  発動します。 <call11>",
+                "/ma <<Cryohelix>> <t>"
               ]
             },
             {
               "name": "氷計MB",
               "lines": [
                 "/<</equipset>> 22",
-                "<</jobability>> <<気炎万丈の章>> <me> <wait1>",
-                "/ma <<氷門の計>>II <t> <wait1>",
+                "<</jobability>> <<Ebullience>> <me> <wait1>",
+                "/ma <<Cryohelix>>II <t> <wait1>",
                 "<</equipset>> 25",
                 "",
                 ""
@@ -42037,8 +42037,8 @@
             {
               "name": "氷5",
               "lines": [
-                "<</equip>> <<頭>> ＡＢボンネット+2",
-                "/ma <<ブリザド>>V <t> <wait3>",
+                "<</equip>> <<head>> ＡＢボンネット+2",
+                "/ma <<Blizzard>>V <t> <wait3>",
                 "<</equipset>> 21",
                 "",
                 "",
@@ -42048,9 +42048,9 @@
             {
               "name": "アスピル",
               "lines": [
-                "<</equip>> <<頭>> ＡＢボンネット+2",
-                "<</equip>> <<腰>> 風鳥の帯",
-                "/ma <<アスピル>>II <t> <wait3>",
+                "<</equip>> <<head>> ＡＢボンネット+2",
+                "<</equip>> <<waist>> 風鳥の帯",
+                "/ma <<Aspir>>II <t> <wait3>",
                 "<</equipset>> 21",
                 "",
                 ""
@@ -42059,7 +42059,7 @@
             {
               "name": "机上演習",
               "lines": [
-                "<</jobability>> <<机上演習>> <me> <wait2>",
+                "<</jobability>> <<Sublimation>> <me> <wait2>",
                 "<</equipset>> 21",
                 "",
                 "",
@@ -42097,8 +42097,8 @@
             {
               "name": "白グリ",
               "lines": [
-                "<</equip>> <<胴>> ＡＢガウン+2",
-                "/ja <<白のグリモア>> <me> <wait2>",
+                "<</equip>> <<body>> ＡＢガウン+2",
+                "/ja <<Light Arts>> <me> <wait2>",
                 "<</equipset>> 21",
                 "",
                 "",
@@ -42108,7 +42108,7 @@
             {
               "name": "白補遺",
               "lines": [
-                "<</jobability>> <<白の補遺>> <me>",
+                "<</jobability>> <<Addendum: White>> <me>",
                 "",
                 "",
                 "",
@@ -42119,7 +42119,7 @@
             {
               "name": "女神降臨",
               "lines": [
-                "<</jobability>> <<女神降臨の章>> <me>",
+                "<</jobability>> <<Accession>> <me>",
                 "",
                 "",
                 "",
@@ -42130,7 +42130,7 @@
             {
               "name": "令狸",
               "lines": [
-                "<</jobability>> <<令狸執鼠の章>> <me>",
+                "<</jobability>> <<Perpetuance>> <me>",
                 "",
                 "",
                 "",
@@ -42142,7 +42142,7 @@
               "name": "土陣",
               "lines": [
                 "<</equipset>> 24",
-                "/ma <<砂塵の陣>>II <me> <wait2>",
+                "/ma <<Sandstorm>>II <me> <wait2>",
                 "<</equipset>> 21",
                 "",
                 "",
@@ -42153,7 +42153,7 @@
               "name": "ヘイスト",
               "lines": [
                 "<</equipset>> 24",
-                "/ma <<ヘイスト>> <me> <wait5>",
+                "/ma <<Haste>> <me> <wait5>",
                 "<</equipset>> 21 echo",
                 "",
                 "",
@@ -42163,22 +42163,22 @@
             {
               "name": "ファラ",
               "lines": [
-                "/ja <<白のグリモア>> <stpc> <wait1>",
+                "/ja <<Light Arts>> <stpc> <wait1>",
                 "<</equipset>> 24 echo",
-                "/ja <<女神降臨の章>> <me> <wait2>",
-                "/ja <<令狸執鼠の章>> <me> <wait2>",
-                "/ma <<ファランクス>> <me> <wait5>",
+                "/ja <<Accession>> <me> <wait2>",
+                "/ja <<Perpetuance>> <me> <wait2>",
+                "/ma <<Phalanx>> <me> <wait5>",
                 "<</equipset>> 21 echo"
               ]
             },
             {
               "name": "ストスキ",
               "lines": [
-                "/ja <<白のグリモア>> <stpc> <wait1>",
+                "/ja <<Light Arts>> <stpc> <wait1>",
                 "<</equipset>> 24 echo",
-                "/ja <<女神降臨の章>> <me> <wait2>",
-                "/ja <<令狸執鼠の章>> <me> <wait2>",
-                "/ma <<ストンスキン>> <me> <wait5>",
+                "/ja <<Accession>> <me> <wait2>",
+                "/ja <<Perpetuance>> <me> <wait2>",
+                "/ma <<Stoneskin>> <me> <wait5>",
                 "<</equipset>> 21 echo"
               ]
             },
@@ -42186,7 +42186,7 @@
               "name": "ケアル",
               "lines": [
                 "<</equipset>> 22",
-                "/ma <<ケアル>>IV <stpc> <wait5>",
+                "/ma <<Cure>>IV <stpc> <wait5>",
                 "<</equipset>> 21 echo",
                 "",
                 "",
@@ -42197,10 +42197,10 @@
               "name": "リジェV",
               "lines": [
                 "<</equipset>> 24 echo",
-                "<</equip>> <<背>> ブックワームケープ",
-                "/ja <<女神降臨の章>> <me> <wait2>",
-                "/ja <<令狸執鼠の章>> <me> <wait2>",
-                "/ma <<リジェネ>>V <me> <wait5>",
+                "<</equip>> <<back>> ブックワームケープ",
+                "/ja <<Accession>> <me> <wait2>",
+                "/ja <<Perpetuance>> <me> <wait2>",
+                "/ma <<Regen>>V <me> <wait5>",
                 "<</equipset>> 21 echo"
               ]
             }
@@ -42209,10 +42209,10 @@
             {
               "name": "黒グリ",
               "lines": [
-                "<</equip>> <<胴>> ＡＢガウン+2",
-                "/ja <<黒のグリモア>> <me> <wait2>",
-                "/ja <<黒の補遺>> <me> <wait1>",
-                "<</recast>> <<戦術魔道書>>",
+                "<</equip>> <<body>> ＡＢガウン+2",
+                "/ja <<Dark Arts>> <me> <wait2>",
+                "/ja <<Addendum: Black>> <me> <wait1>",
+                "<</recast>> <<Stratagems>>",
                 "<</equipset>> 21",
                 ""
               ]
@@ -42221,8 +42221,8 @@
               "name": "FC",
               "lines": [
                 "<</equipset>> 22",
-                "/p <recast=<<震天動地の章>>>",
-                "<</recast>> <<闇門の計>>",
+                "/p <recast=<<Immanence>>>",
+                "<</recast>> <<Noctohelix>>",
                 "",
                 "",
                 ""
@@ -42231,20 +42231,20 @@
             {
               "name": "土連携",
               "lines": [
-                "<</jobability>> <<震天動地の章>> <me> <wait2>",
-                "/p ①①①  土<<連携>> <<ストーン>>MB <<準備中です。>> <call10>",
-                "/ma <<エアロ>> <t> <wait4>",
-                "<</jobability>> <<震天動地の章>> <me> <wait2>",
-                "/p ②②②  土<<連携>> <<ストーン>>MB  発動します。 <call11>",
-                "/ma <<闇門の計>> <t>"
+                "<</jobability>> <<Immanence>> <me> <wait2>",
+                "/p ①①①  土<<Skillchain>> <<Stone>>MB <<I'm not ready.>> <call10>",
+                "/ma <<Aero>> <t> <wait4>",
+                "<</jobability>> <<Immanence>> <me> <wait2>",
+                "/p ②②②  土<<Skillchain>> <<Stone>>MB  発動します。 <call11>",
+                "/ma <<Noctohelix>> <t>"
               ]
             },
             {
               "name": "土計MB",
               "lines": [
                 "/<</equipset>> 22",
-                "<</jobability>> <<気炎万丈の章>> <me> <wait1>",
-                "/ma <<土門の計>>II <t> <wait1>",
+                "<</jobability>> <<Ebullience>> <me> <wait1>",
+                "/ma <<Geohelix>>II <t> <wait1>",
                 "<</equipset>> 25",
                 "",
                 ""
@@ -42253,8 +42253,8 @@
             {
               "name": "土5",
               "lines": [
-                "<</equip>> <<頭>> ＡＢボンネット+2",
-                "/ma <<ストーン>>V <t> <wait3>",
+                "<</equip>> <<head>> ＡＢボンネット+2",
+                "/ma <<Stone>>V <t> <wait3>",
                 "<</equipset>> 21",
                 "",
                 "",
@@ -42265,8 +42265,8 @@
               "name": "土計MB",
               "lines": [
                 "/<</equipset>> 22",
-                "<</jobability>> <<震天動地の章>> <me> <wait1>",
-                "/ma <<土門の計>>II <t> <wait1>",
+                "<</jobability>> <<Immanence>> <me> <wait1>",
+                "/ma <<Geohelix>>II <t> <wait1>",
                 "<</equipset>> 25",
                 "",
                 ""
@@ -42275,9 +42275,9 @@
             {
               "name": "アスピル",
               "lines": [
-                "<</equip>> <<頭>> ＡＢボンネット+2",
-                "<</equip>> <<腰>> 風鳥の帯",
-                "/ma <<アスピル>>II <t> <wait3>",
+                "<</equip>> <<head>> ＡＢボンネット+2",
+                "<</equip>> <<waist>> 風鳥の帯",
+                "/ma <<Aspir>>II <t> <wait3>",
                 "<</equipset>> 21",
                 "",
                 ""
@@ -42286,7 +42286,7 @@
             {
               "name": "机上演習",
               "lines": [
-                "<</jobability>> <<机上演習>> <me> <wait2>",
+                "<</jobability>> <<Sublimation>> <me> <wait2>",
                 "<</equipset>> 21",
                 "",
                 "",
@@ -42324,8 +42324,8 @@
             {
               "name": "白グリ",
               "lines": [
-                "<</equip>> <<胴>> ＡＢガウン+2",
-                "/ja <<白のグリモア>> <me> <wait2>",
+                "<</equip>> <<body>> ＡＢガウン+2",
+                "/ja <<Light Arts>> <me> <wait2>",
                 "<</equipset>> 21",
                 "",
                 "",
@@ -42335,7 +42335,7 @@
             {
               "name": "白補遺",
               "lines": [
-                "<</jobability>> <<白の補遺>> <me>",
+                "<</jobability>> <<Addendum: White>> <me>",
                 "",
                 "",
                 "",
@@ -42346,7 +42346,7 @@
             {
               "name": "女神降臨",
               "lines": [
-                "<</jobability>> <<女神降臨の章>> <me>",
+                "<</jobability>> <<Accession>> <me>",
                 "",
                 "",
                 "",
@@ -42357,7 +42357,7 @@
             {
               "name": "令狸",
               "lines": [
-                "<</jobability>> <<令狸執鼠の章>> <me>",
+                "<</jobability>> <<Perpetuance>> <me>",
                 "",
                 "",
                 "",
@@ -42369,7 +42369,7 @@
               "name": "風陣",
               "lines": [
                 "<</equipset>> 24",
-                "/ma <<烈風の陣>>II <me> <wait2>",
+                "/ma <<Windstorm>>II <me> <wait2>",
                 "<</equipset>> 21",
                 "",
                 "",
@@ -42380,7 +42380,7 @@
               "name": "ヘイスト",
               "lines": [
                 "<</equipset>> 24",
-                "/ma <<ヘイスト>> <me> <wait5>",
+                "/ma <<Haste>> <me> <wait5>",
                 "<</equipset>> 21 echo",
                 "",
                 "",
@@ -42390,22 +42390,22 @@
             {
               "name": "ファラ",
               "lines": [
-                "/ja <<白のグリモア>> <stpc> <wait1>",
+                "/ja <<Light Arts>> <stpc> <wait1>",
                 "<</equipset>> 24 echo",
-                "/ja <<女神降臨の章>> <me> <wait2>",
-                "/ja <<令狸執鼠の章>> <me> <wait2>",
-                "/ma <<ファランクス>> <me> <wait5>",
+                "/ja <<Accession>> <me> <wait2>",
+                "/ja <<Perpetuance>> <me> <wait2>",
+                "/ma <<Phalanx>> <me> <wait5>",
                 "<</equipset>> 21 echo"
               ]
             },
             {
               "name": "ストスキ",
               "lines": [
-                "/ja <<白のグリモア>> <stpc> <wait1>",
+                "/ja <<Light Arts>> <stpc> <wait1>",
                 "<</equipset>> 24 echo",
-                "/ja <<女神降臨の章>> <me> <wait2>",
-                "/ja <<令狸執鼠の章>> <me> <wait2>",
-                "/ma <<ストンスキン>> <me> <wait5>",
+                "/ja <<Accession>> <me> <wait2>",
+                "/ja <<Perpetuance>> <me> <wait2>",
+                "/ma <<Stoneskin>> <me> <wait5>",
                 "<</equipset>> 21 echo"
               ]
             },
@@ -42413,7 +42413,7 @@
               "name": "ケアル",
               "lines": [
                 "<</equipset>> 22",
-                "/ma <<ケアル>>IV <stpc> <wait5>",
+                "/ma <<Cure>>IV <stpc> <wait5>",
                 "<</equipset>> 21 echo",
                 "",
                 "",
@@ -42424,10 +42424,10 @@
               "name": "リジェV",
               "lines": [
                 "<</equipset>> 24 echo",
-                "<</equip>> <<背>> ブックワームケープ",
-                "/ja <<女神降臨の章>> <me> <wait2>",
-                "/ja <<令狸執鼠の章>> <me> <wait2>",
-                "/ma <<リジェネ>>V <me> <wait5>",
+                "<</equip>> <<back>> ブックワームケープ",
+                "/ja <<Accession>> <me> <wait2>",
+                "/ja <<Perpetuance>> <me> <wait2>",
+                "/ma <<Regen>>V <me> <wait5>",
                 "<</equipset>> 21 echo"
               ]
             }
@@ -42436,10 +42436,10 @@
             {
               "name": "黒グリ",
               "lines": [
-                "<</equip>> <<胴>> ＡＢガウン+2",
-                "/ja <<黒のグリモア>> <me> <wait2>",
-                "/ja <<黒の補遺>> <me> <wait1>",
-                "<</recast>> <<戦術魔道書>>",
+                "<</equip>> <<body>> ＡＢガウン+2",
+                "/ja <<Dark Arts>> <me> <wait2>",
+                "/ja <<Addendum: Black>> <me> <wait1>",
+                "<</recast>> <<Stratagems>>",
                 "<</equipset>> 21",
                 ""
               ]
@@ -42448,8 +42448,8 @@
               "name": "FC",
               "lines": [
                 "<</equipset>> 22",
-                "/p <recast=<<震天動地の章>>>",
-                "<</recast>> <<風門の計>>",
+                "/p <recast=<<Immanence>>>",
+                "<</recast>> <<Anemohelix>>",
                 "",
                 "",
                 ""
@@ -42458,20 +42458,20 @@
             {
               "name": "風連携",
               "lines": [
-                "<</jobability>> <<震天動地の章>> <me> <wait1>",
-                "/p ①①①  風<<連携>> <<エアロ>>MB <<準備中です。>> <call10>",
-                "/ma <<ブリザド>> <t> <wait4>",
-                "<</jobability>> <<震天動地の章>> <me> <wait1>",
-                "/p ②②②  風<<連携>> <<エアロ>>MB  発動します。 <call11>",
-                "/ma <<水門の計>> <t>"
+                "<</jobability>> <<Immanence>> <me> <wait1>",
+                "/p ①①①  風<<Skillchain>> <<Aero>>MB <<I'm not ready.>> <call10>",
+                "/ma <<Blizzard>> <t> <wait4>",
+                "<</jobability>> <<Immanence>> <me> <wait1>",
+                "/p ②②②  風<<Skillchain>> <<Aero>>MB  発動します。 <call11>",
+                "/ma <<Hydrohelix>> <t>"
               ]
             },
             {
               "name": "風計MB",
               "lines": [
                 "/<</equipset>> 22",
-                "<</jobability>> <<気炎万丈の章>> <me> <wait1>",
-                "/ma <<風門の計>>II <t> <wait1>",
+                "<</jobability>> <<Ebullience>> <me> <wait1>",
+                "/ma <<Anemohelix>>II <t> <wait1>",
                 "<</equipset>> 25",
                 "",
                 ""
@@ -42480,8 +42480,8 @@
             {
               "name": "風5",
               "lines": [
-                "<</equip>> <<頭>> ＡＢボンネット+2",
-                "/ma <<エアロ>>V <t> <wait3>",
+                "<</equip>> <<head>> ＡＢボンネット+2",
+                "/ma <<Aero>>V <t> <wait3>",
                 "<</equipset>> 21",
                 "",
                 "",
@@ -42491,8 +42491,8 @@
             {
               "name": "風4",
               "lines": [
-                "<</equip>> <<頭>> ＡＢボンネット+2",
-                "/ma <<エアロ>>IV <t> <wait3>",
+                "<</equip>> <<head>> ＡＢボンネット+2",
+                "/ma <<Aero>>IV <t> <wait3>",
                 "<</equipset>> 21",
                 "",
                 "",
@@ -42502,9 +42502,9 @@
             {
               "name": "アスピル",
               "lines": [
-                "<</equip>> <<頭>> ＡＢボンネット+2",
-                "<</equip>> <<腰>> 風鳥の帯",
-                "/ma <<アスピル>>II <t> <wait3>",
+                "<</equip>> <<head>> ＡＢボンネット+2",
+                "<</equip>> <<waist>> 風鳥の帯",
+                "/ma <<Aspir>>II <t> <wait3>",
                 "<</equipset>> 21",
                 "",
                 ""
@@ -42513,7 +42513,7 @@
             {
               "name": "机上演習",
               "lines": [
-                "<</jobability>> <<机上演習>> <me> <wait2>",
+                "<</jobability>> <<Sublimation>> <me> <wait2>",
                 "<</equipset>> 21",
                 "",
                 "",
@@ -42551,8 +42551,8 @@
             {
               "name": "白グリ",
               "lines": [
-                "<</equip>> <<胴>> ＡＢガウン+2",
-                "/ja <<白のグリモア>> <me> <wait2>",
+                "<</equip>> <<body>> ＡＢガウン+2",
+                "/ja <<Light Arts>> <me> <wait2>",
                 "<</equipset>> 21",
                 "",
                 "",
@@ -42562,7 +42562,7 @@
             {
               "name": "白補遺",
               "lines": [
-                "<</jobability>> <<白の補遺>> <me>",
+                "<</jobability>> <<Addendum: White>> <me>",
                 "",
                 "",
                 "",
@@ -42573,7 +42573,7 @@
             {
               "name": "女神降臨",
               "lines": [
-                "<</jobability>> <<女神降臨の章>> <me>",
+                "<</jobability>> <<Accession>> <me>",
                 "",
                 "",
                 "",
@@ -42584,7 +42584,7 @@
             {
               "name": "令狸",
               "lines": [
-                "<</jobability>> <<令狸執鼠の章>> <me>",
+                "<</jobability>> <<Perpetuance>> <me>",
                 "",
                 "",
                 "",
@@ -42596,7 +42596,7 @@
               "name": "水陣",
               "lines": [
                 "<</equipset>> 24",
-                "/ma <<豪雨の陣>>II <me> <wait2>",
+                "/ma <<Rainstorm>>II <me> <wait2>",
                 "<</equipset>> 21",
                 "",
                 "",
@@ -42607,7 +42607,7 @@
               "name": "ヘイスト",
               "lines": [
                 "<</equipset>> 24",
-                "/ma <<ヘイスト>> <me> <wait5>",
+                "/ma <<Haste>> <me> <wait5>",
                 "<</equipset>> 21 echo",
                 "",
                 "",
@@ -42617,22 +42617,22 @@
             {
               "name": "ファラ",
               "lines": [
-                "/ja <<白のグリモア>> <stpc> <wait1>",
+                "/ja <<Light Arts>> <stpc> <wait1>",
                 "<</equipset>> 24 echo",
-                "/ja <<女神降臨の章>> <me> <wait2>",
-                "/ja <<令狸執鼠の章>> <me> <wait2>",
-                "/ma <<ファランクス>> <me> <wait5>",
+                "/ja <<Accession>> <me> <wait2>",
+                "/ja <<Perpetuance>> <me> <wait2>",
+                "/ma <<Phalanx>> <me> <wait5>",
                 "<</equipset>> 21 echo"
               ]
             },
             {
               "name": "ストスキ",
               "lines": [
-                "/ja <<白のグリモア>> <stpc> <wait1>",
+                "/ja <<Light Arts>> <stpc> <wait1>",
                 "<</equipset>> 24 echo",
-                "/ja <<女神降臨の章>> <me> <wait2>",
-                "/ja <<令狸執鼠の章>> <me> <wait2>",
-                "/ma <<ストンスキン>> <me> <wait5>",
+                "/ja <<Accession>> <me> <wait2>",
+                "/ja <<Perpetuance>> <me> <wait2>",
+                "/ma <<Stoneskin>> <me> <wait5>",
                 "<</equipset>> 21 echo"
               ]
             },
@@ -42640,7 +42640,7 @@
               "name": "ケアル",
               "lines": [
                 "<</equipset>> 22",
-                "/ma <<ケアル>>IV <stpc> <wait5>",
+                "/ma <<Cure>>IV <stpc> <wait5>",
                 "<</equipset>> 21 echo",
                 "",
                 "",
@@ -42651,10 +42651,10 @@
               "name": "リジェV",
               "lines": [
                 "<</equipset>> 24 echo",
-                "<</equip>> <<背>> ブックワームケープ",
-                "/ja <<女神降臨の章>> <me> <wait2>",
-                "/ja <<令狸執鼠の章>> <me> <wait2>",
-                "/ma <<リジェネ>>V <me> <wait5>",
+                "<</equip>> <<back>> ブックワームケープ",
+                "/ja <<Accession>> <me> <wait2>",
+                "/ja <<Perpetuance>> <me> <wait2>",
+                "/ma <<Regen>>V <me> <wait5>",
                 "<</equipset>> 21 echo"
               ]
             }
@@ -42663,10 +42663,10 @@
             {
               "name": "黒グリ",
               "lines": [
-                "<</equip>> <<胴>> ＡＢガウン+2",
-                "/ja <<黒のグリモア>> <me> <wait2>",
-                "/ja <<黒の補遺>> <me> <wait1>",
-                "<</recast>> <<戦術魔道書>>",
+                "<</equip>> <<body>> ＡＢガウン+2",
+                "/ja <<Dark Arts>> <me> <wait2>",
+                "/ja <<Addendum: Black>> <me> <wait1>",
+                "<</recast>> <<Stratagems>>",
                 "<</equipset>> 21",
                 ""
               ]
@@ -42675,8 +42675,8 @@
               "name": "FC",
               "lines": [
                 "<</equipset>> 22",
-                "/p <recast=<<震天動地の章>>>",
-                "<</recast>> <<水門の計>>",
+                "/p <recast=<<Immanence>>>",
+                "<</recast>> <<Hydrohelix>>",
                 "",
                 "",
                 ""
@@ -42685,20 +42685,20 @@
             {
               "name": "水連携",
               "lines": [
-                "<</jobability>> <<震天動地の章>> <me> <wait1>",
-                "/p ①①①  水<<連携>> <<ウォータ>>MB <<準備中です。>> <call10>",
-                "/ma <<ストーン>> <t> <wait4>",
-                "<</jobability>> <<震天動地の章>> <me> <wait2>",
-                "/p ②②②  水<<連携>> <<ウォータ>>MB  発動します。 <call11>",
-                "/ma <<水門の計>> <t>"
+                "<</jobability>> <<Immanence>> <me> <wait1>",
+                "/p ①①①  水<<Skillchain>> <<Water>>MB <<I'm not ready.>> <call10>",
+                "/ma <<Stone>> <t> <wait4>",
+                "<</jobability>> <<Immanence>> <me> <wait2>",
+                "/p ②②②  水<<Skillchain>> <<Water>>MB  発動します。 <call11>",
+                "/ma <<Hydrohelix>> <t>"
               ]
             },
             {
               "name": "水計MB",
               "lines": [
                 "/<</equipset>> 22",
-                "<</jobability>> <<気炎万丈の章>> <me> <wait1>",
-                "/ma <<水門の計>>II <t> <wait1>",
+                "<</jobability>> <<Ebullience>> <me> <wait1>",
+                "/ma <<Hydrohelix>>II <t> <wait1>",
                 "<</equipset>> 25",
                 "",
                 ""
@@ -42707,8 +42707,8 @@
             {
               "name": "水5",
               "lines": [
-                "<</equip>> <<頭>> ＡＢボンネット+2",
-                "/ma <<ウォータ>>V <t> <wait3>",
+                "<</equip>> <<head>> ＡＢボンネット+2",
+                "/ma <<Water>>V <t> <wait3>",
                 "<</equipset>> 21",
                 "",
                 "",
@@ -42718,8 +42718,8 @@
             {
               "name": "水4",
               "lines": [
-                "<</equip>> <<頭>> ＡＢボンネット+2",
-                "/ma <<ウォータ>>IV <t> <wait3>",
+                "<</equip>> <<head>> ＡＢボンネット+2",
+                "/ma <<Water>>IV <t> <wait3>",
                 "<</equipset>> 21",
                 "",
                 "",
@@ -42729,9 +42729,9 @@
             {
               "name": "アスピル",
               "lines": [
-                "<</equip>> <<頭>> ＡＢボンネット+2",
-                "<</equip>> <<腰>> 風鳥の帯",
-                "/ma <<アスピル>>II <t> <wait3>",
+                "<</equip>> <<head>> ＡＢボンネット+2",
+                "<</equip>> <<waist>> 風鳥の帯",
+                "/ma <<Aspir>>II <t> <wait3>",
                 "<</equipset>> 21",
                 "",
                 ""
@@ -42740,7 +42740,7 @@
             {
               "name": "机上演習",
               "lines": [
-                "<</jobability>> <<机上演習>> <me> <wait2>",
+                "<</jobability>> <<Sublimation>> <me> <wait2>",
                 "<</equipset>> 21",
                 "",
                 "",
@@ -42778,8 +42778,8 @@
             {
               "name": "白グリ",
               "lines": [
-                "<</equip>> <<胴>> ＡＢガウン+2",
-                "/ja <<白のグリモア>> <me> <wait2>",
+                "<</equip>> <<body>> ＡＢガウン+2",
+                "/ja <<Light Arts>> <me> <wait2>",
                 "<</equipset>> 21",
                 "",
                 "",
@@ -42789,7 +42789,7 @@
             {
               "name": "白補遺",
               "lines": [
-                "<</jobability>> <<白の補遺>> <me>",
+                "<</jobability>> <<Addendum: White>> <me>",
                 "",
                 "",
                 "",
@@ -42800,7 +42800,7 @@
             {
               "name": "女神降臨",
               "lines": [
-                "<</jobability>> <<女神降臨の章>> <me>",
+                "<</jobability>> <<Accession>> <me>",
                 "",
                 "",
                 "",
@@ -42811,7 +42811,7 @@
             {
               "name": "令狸",
               "lines": [
-                "<</jobability>> <<令狸執鼠の章>> <me>",
+                "<</jobability>> <<Perpetuance>> <me>",
                 "",
                 "",
                 "",
@@ -42823,7 +42823,7 @@
               "name": "熱陣",
               "lines": [
                 "<</equipset>> 24",
-                "/ma <<熱波の陣>>II <me> <wait2>",
+                "/ma <<Firestorm>>II <me> <wait2>",
                 "<</equipset>> 21",
                 "",
                 "",
@@ -42834,7 +42834,7 @@
               "name": "ヘイスト",
               "lines": [
                 "<</equipset>> 24",
-                "/ma <<ヘイスト>> <me> <wait5>",
+                "/ma <<Haste>> <me> <wait5>",
                 "<</equipset>> 21 echo",
                 "",
                 "",
@@ -42844,22 +42844,22 @@
             {
               "name": "ファラ",
               "lines": [
-                "/ja <<白のグリモア>> <stpc> <wait1>",
+                "/ja <<Light Arts>> <stpc> <wait1>",
                 "<</equipset>> 24 echo",
-                "/ja <<女神降臨の章>> <me> <wait2>",
-                "/ja <<令狸執鼠の章>> <me> <wait2>",
-                "/ma <<ファランクス>> <me> <wait5>",
+                "/ja <<Accession>> <me> <wait2>",
+                "/ja <<Perpetuance>> <me> <wait2>",
+                "/ma <<Phalanx>> <me> <wait5>",
                 "<</equipset>> 21 echo"
               ]
             },
             {
               "name": "ストスキ",
               "lines": [
-                "/ja <<白のグリモア>> <stpc> <wait1>",
+                "/ja <<Light Arts>> <stpc> <wait1>",
                 "<</equipset>> 24 echo",
-                "/ja <<女神降臨の章>> <me> <wait2>",
-                "/ja <<令狸執鼠の章>> <me> <wait2>",
-                "/ma <<ストンスキン>> <me> <wait5>",
+                "/ja <<Accession>> <me> <wait2>",
+                "/ja <<Perpetuance>> <me> <wait2>",
+                "/ma <<Stoneskin>> <me> <wait5>",
                 "<</equipset>> 21 echo"
               ]
             },
@@ -42867,7 +42867,7 @@
               "name": "ケアル",
               "lines": [
                 "<</equipset>> 22",
-                "/ma <<ケアル>>IV <stpc> <wait5>",
+                "/ma <<Cure>>IV <stpc> <wait5>",
                 "<</equipset>> 21 echo",
                 "",
                 "",
@@ -42878,10 +42878,10 @@
               "name": "リジェV",
               "lines": [
                 "<</equipset>> 24 echo",
-                "<</equip>> <<背>> ブックワームケープ",
-                "/ja <<女神降臨の章>> <me> <wait2>",
-                "/ja <<令狸執鼠の章>> <me> <wait2>",
-                "/ma <<リジェネ>>V <me> <wait5>",
+                "<</equip>> <<back>> ブックワームケープ",
+                "/ja <<Accession>> <me> <wait2>",
+                "/ja <<Perpetuance>> <me> <wait2>",
+                "/ma <<Regen>>V <me> <wait5>",
                 "<</equipset>> 21 echo"
               ]
             }
@@ -42890,10 +42890,10 @@
             {
               "name": "黒グリ",
               "lines": [
-                "<</equip>> <<胴>> ＡＢガウン+2",
-                "/ja <<黒のグリモア>> <me> <wait2>",
-                "/ja <<黒の補遺>> <me> <wait1>",
-                "<</recast>> <<戦術魔道書>>",
+                "<</equip>> <<body>> ＡＢガウン+2",
+                "/ja <<Dark Arts>> <me> <wait2>",
+                "/ja <<Addendum: Black>> <me> <wait1>",
+                "<</recast>> <<Stratagems>>",
                 "<</equipset>> 21",
                 ""
               ]
@@ -42902,9 +42902,9 @@
               "name": "FC",
               "lines": [
                 "<</equipset>> 22",
-                "/p <recast=<<震天動地の章>>>",
-                "<</recast>> <<火門の計>>",
-                "<</recast>> <<雷門の計>>",
+                "/p <recast=<<Immanence>>>",
+                "<</recast>> <<Pyrohelix>>",
+                "<</recast>> <<Ionohelix>>",
                 "",
                 ""
               ]
@@ -42912,20 +42912,20 @@
             {
               "name": "火連携",
               "lines": [
-                "<</jobability>> <<震天動地の章>> <me> <wait2>",
-                "/p ①①①  火<<連携>> <<ファイア>>MB <<準備中です。>> <call10>",
-                "/ma <<ストーン>> <t> <wait4>",
-                "<</jobability>> <<震天動地の章>> <me> <wait2>",
-                "/p ②②②  火<<連携>> <<ファイア>>MB  発動します。 <call11>",
-                "/ma <<火門の計>> <t>"
+                "<</jobability>> <<Immanence>> <me> <wait2>",
+                "/p ①①①  火<<Skillchain>> <<Fire>>MB <<I'm not ready.>> <call10>",
+                "/ma <<Stone>> <t> <wait4>",
+                "<</jobability>> <<Immanence>> <me> <wait2>",
+                "/p ②②②  火<<Skillchain>> <<Fire>>MB  発動します。 <call11>",
+                "/ma <<Pyrohelix>> <t>"
               ]
             },
             {
               "name": "核熱",
               "lines": [
-                "<</jobability>> <<震天動地の章>> <me> <wait1>",
-                "/p ③③③  <<核熱>><<連携>> <<ファイア>>MB 発動します。 <call11>",
-                "/ma <<雷門の計>> <t>",
+                "<</jobability>> <<Immanence>> <me> <wait1>",
+                "/p ③③③  <<Fusion>><<Skillchain>> <<Fire>>MB 発動します。 <call11>",
+                "/ma <<Ionohelix>> <t>",
                 "",
                 "",
                 ""
@@ -42935,8 +42935,8 @@
               "name": "火計MB",
               "lines": [
                 "/<</equipset>> 22",
-                "<</jobability>> <<気炎万丈の章>> <me> <wait1>",
-                "/ma <<火門の計>>II <t> <wait1>",
+                "<</jobability>> <<Ebullience>> <me> <wait1>",
+                "/ma <<Pyrohelix>>II <t> <wait1>",
                 "<</equipset>> 25",
                 "",
                 ""
@@ -42946,8 +42946,8 @@
               "name": "震天火計",
               "lines": [
                 "/<</equipset>> 22",
-                "<</jobability>> <<震天動地の章>> <me> <wait1>",
-                "/ma <<火門の計>> <t> <wait1>",
+                "<</jobability>> <<Immanence>> <me> <wait1>",
+                "/ma <<Pyrohelix>> <t> <wait1>",
                 "<</equipset>> 25",
                 "",
                 ""
@@ -42956,9 +42956,9 @@
             {
               "name": "アスピル",
               "lines": [
-                "<</equip>> <<頭>> ＡＢボンネット+2",
-                "<</equip>> <<腰>> 風鳥の帯",
-                "/ma <<アスピル>>II <t> <wait3>",
+                "<</equip>> <<head>> ＡＢボンネット+2",
+                "<</equip>> <<waist>> 風鳥の帯",
+                "/ma <<Aspir>>II <t> <wait3>",
                 "<</equipset>> 21",
                 "",
                 ""
@@ -42968,10 +42968,10 @@
               "name": "机上演習",
               "lines": [
                 "<</equipset>> 26",
-                "<</jobability>> <<机上演習>> <me> <wait2>",
+                "<</jobability>> <<Sublimation>> <me> <wait2>",
                 "<</equipset>> 21",
                 "",
-                "<</jobability>> <<机上演習>> <me> <wait2>",
+                "<</jobability>> <<Sublimation>> <me> <wait2>",
                 "<</equipset>> 21"
               ]
             },
@@ -43071,9 +43071,9 @@
             {
               "name": "白グリ",
               "lines": [
-                "<</equip>> <<胴>> ＡＢガウン+2",
-                "/ja <<白のグリモア>> <me> <wait2>",
-                "/ja <<白の補遺>> <me> <wait1>",
+                "<</equip>> <<body>> ＡＢガウン+2",
+                "/ja <<Light Arts>> <me> <wait2>",
+                "/ja <<Addendum: White>> <me> <wait1>",
                 "<</equipset>> 21",
                 "",
                 ""
@@ -43083,7 +43083,7 @@
               "name": "ヘイスト",
               "lines": [
                 "<</equipset>> 24",
-                "/ma <<ヘイスト>> <me> <wait5>",
+                "/ma <<Haste>> <me> <wait5>",
                 "<</equipset>> 21 echo",
                 "",
                 "",
@@ -43094,9 +43094,9 @@
               "name": "リフレ",
               "lines": [
                 "<</equipset>> 22 echo",
-                "/ja <<女神降臨の章>> <me> <wait2>",
-                "/ja <<令狸執鼠の章>> <me> <wait2>",
-                "/ma <<リフレシュ>> <me> <wait1>",
+                "/ja <<Accession>> <me> <wait2>",
+                "/ja <<Perpetuance>> <me> <wait2>",
+                "/ma <<Refresh>> <me> <wait1>",
                 "<</equipset>> 24 echo <wait2>",
                 "<</equipset>> 21 echo"
               ]
@@ -43104,12 +43104,12 @@
             {
               "name": "スニ",
               "lines": [
-                "/ja <<女神降臨の章>> <me> <wait2>",
-                "/ja <<令狸執鼠の章>> <me> <wait2>",
-                "/ma <<スニーク>> <me> <wait7>",
-                "/ja <<女神降臨の章>> <me> <wait2>",
-                "/ja <<令狸執鼠の章>> <me> <wait2>",
-                "/ma <<インビジ>> <me>"
+                "/ja <<Accession>> <me> <wait2>",
+                "/ja <<Perpetuance>> <me> <wait2>",
+                "/ma <<Sneak>> <me> <wait7>",
+                "/ja <<Accession>> <me> <wait2>",
+                "/ja <<Perpetuance>> <me> <wait2>",
+                "/ma <<Invisible>> <me>"
               ]
             }
           ],
@@ -43118,20 +43118,20 @@
               "name": "リジェV",
               "lines": [
                 "<</equipset>> 24 echo",
-                "<</equip>> <<背>> ブックワームケープ",
-                "/ja <<女神降臨の章>> <me> <wait2>",
-                "/ja <<令狸執鼠の章>> <me> <wait2>",
-                "/ma <<リジェネ>>V <me> <wait5>",
+                "<</equip>> <<back>> ブックワームケープ",
+                "/ja <<Accession>> <me> <wait2>",
+                "/ja <<Perpetuance>> <me> <wait2>",
+                "/ma <<Regen>>V <me> <wait5>",
                 "<</equipset>> 21 echo"
               ]
             },
             {
               "name": "黒グリ",
               "lines": [
-                "<</equip>> <<胴>> ＡＢガウン+2",
-                "/ja <<黒のグリモア>> <me> <wait2>",
-                "/ja <<黒の補遺>> <me> <wait1>",
-                "<</recast>> <<戦術魔道書>>",
+                "<</equip>> <<body>> ＡＢガウン+2",
+                "/ja <<Dark Arts>> <me> <wait2>",
+                "/ja <<Addendum: Black>> <me> <wait1>",
+                "<</recast>> <<Stratagems>>",
                 "<</equipset>> 21",
                 ""
               ]
@@ -43139,32 +43139,32 @@
             {
               "name": "鼓舞",
               "lines": [
-                "/ja <<白のグリモア>> <stpc> <wait1>",
+                "/ja <<Light Arts>> <stpc> <wait1>",
                 "<</equipset>> 24 echo",
-                "/ja <<女神降臨の章>> <me> <wait2>",
-                "/ja <<令狸執鼠の章>> <me> <wait2>",
-                "/ma <<鼓舞激励の策>> <me>",
-                "<</recast>> <<戦術魔道書>>"
+                "/ja <<Accession>> <me> <wait2>",
+                "/ja <<Perpetuance>> <me> <wait2>",
+                "/ma <<Adloquium>> <me>",
+                "<</recast>> <<Stratagems>>"
               ]
             },
             {
               "name": "虚誘",
               "lines": [
-                "/ja <<白のグリモア>> <stpc> <wait1>",
+                "/ja <<Light Arts>> <stpc> <wait1>",
                 "<</equipset>> 24 echo",
-                "/ja <<女神降臨の章>> <me> <wait2>",
-                "/ja <<令狸執鼠の章>> <me> <wait2>",
-                "/ma <<虚誘掩殺の策>> <me>",
-                "<</recast>> <<戦術魔道書>>"
+                "/ja <<Accession>> <me> <wait2>",
+                "/ja <<Perpetuance>> <me> <wait2>",
+                "/ma <<Klimaform>> <me>",
+                "<</recast>> <<Stratagems>>"
               ]
             },
             {
               "name": "ファラ",
               "lines": [
                 "<</equipset>> 22 echo",
-                "/ja <<女神降臨の章>> <me> <wait2>",
-                "/ja <<令狸執鼠の章>> <me> <wait2>",
-                "/ma <<ファランクス>> <me> <wait1>",
+                "/ja <<Accession>> <me> <wait2>",
+                "/ja <<Perpetuance>> <me> <wait2>",
+                "/ma <<Phalanx>> <me> <wait1>",
                 "<</equipset>> 24 echo <wait3>",
                 "<</equipset>> 21 echo"
               ]
@@ -43172,22 +43172,22 @@
             {
               "name": "プロ",
               "lines": [
-                "/ja <<白のグリモア>> <stpc> <wait1>",
+                "/ja <<Light Arts>> <stpc> <wait1>",
                 "<</equipset>> 24 echo",
-                "/ja <<女神降臨の章>> <me> <wait2>",
-                "/ja <<令狸執鼠の章>> <me> <wait2>",
-                "/ma <<プロテス>>V <me> <wait5>",
+                "/ja <<Accession>> <me> <wait2>",
+                "/ja <<Perpetuance>> <me> <wait2>",
+                "/ma <<Protect>>V <me> <wait5>",
                 "<</equipset>> 21 echo"
               ]
             },
             {
               "name": "シェル",
               "lines": [
-                "/ja <<白のグリモア>> <stpc> <wait1>",
+                "/ja <<Light Arts>> <stpc> <wait1>",
                 "<</equipset>> 24 echo",
-                "/ja <<女神降臨の章>> <me> <wait2>",
-                "/ja <<令狸執鼠の章>> <me> <wait2>",
-                "/ma <<シェル>>V <me> <wait5>",
+                "/ja <<Accession>> <me> <wait2>",
+                "/ja <<Perpetuance>> <me> <wait2>",
+                "/ma <<Shell>>V <me> <wait5>",
                 "<</equipset>> 21 echo"
               ]
             },
@@ -43195,7 +43195,7 @@
               "name": "ケアル",
               "lines": [
                 "<</equipset>> 22",
-                "/ma <<ケアル>>IV <stpc> <wait5>",
+                "/ma <<Cure>>IV <stpc> <wait5>",
                 "<</equipset>> 21 echo",
                 "",
                 "",
@@ -43205,11 +43205,11 @@
             {
               "name": "ストスキ",
               "lines": [
-                "/ja <<白のグリモア>> <stpc> <wait1>",
+                "/ja <<Light Arts>> <stpc> <wait1>",
                 "<</equipset>> 24 echo",
-                "/ja <<女神降臨の章>> <me> <wait2>",
-                "/ja <<令狸執鼠の章>> <me> <wait2>",
-                "/ma <<ストンスキン>> <me> <wait5>",
+                "/ja <<Accession>> <me> <wait2>",
+                "/ja <<Perpetuance>> <me> <wait2>",
+                "/ma <<Stoneskin>> <me> <wait5>",
                 "<</equipset>> 21 echo"
               ]
             },
