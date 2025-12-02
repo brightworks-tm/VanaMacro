@@ -279,7 +279,16 @@ def load_autotrans_tree() -> List[Dict[str, List[str]]]:
         conn.close()
         _TREE_CACHE = categories
         return categories
-    except Exception:
+    except FileNotFoundError as e:
+        import logging
+        logger = logging.getLogger(__name__)
+        logger.error(f"定型文データベースが見つかりません: {e}")
+        _TREE_CACHE = []
+        return _TREE_CACHE
+    except Exception as e:
+        import logging
+        logger = logging.getLogger(__name__)
+        logger.error(f"定型文データの読み込みエラー: {e}", exc_info=True)
         _TREE_CACHE = []
         return _TREE_CACHE
 
