@@ -107,3 +107,4 @@ VanaMacro は **日本語** と **英語** の UI に対応しています。
 - PyQt6（UI/ハイライト/補完機能）
 - pykakasi（定型文検索用の読み変換）
 - その他: `autotrans_data/res/*.lua` から生成された辞書ファイル
+
