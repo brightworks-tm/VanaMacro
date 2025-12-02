@@ -6,6 +6,7 @@ from PyQt6.QtGui import (
 from pathlib import Path
 import logging
 import re
+import sqlite3
 
 # Module-level logger for optional debug output.
 logger = logging.getLogger(__name__)
@@ -48,28 +49,20 @@ _PRIORITY_COMMANDS = [
 ]
 
 def _load_autotrans_commands():
-    """定型文の「テキストコマンド」カテゴリからコマンドを抽出"""
-    path = Path(__file__).resolve().parent / "autotrans_data" / "res" / "auto_translates.lua"
-    if not path.exists():
+    """resources.dbからコマンドを読み込む"""
+    db_path = Path(__file__).resolve().parent / "autotrans_data" / "resources.db"
+    if not db_path.exists():
         return set()
-    text = path.read_text(encoding="utf-8", errors="ignore")
-    commands = set()
-    # ID 3329-3583 の範囲（3328は「テキストコマンド」カテゴリ名自体なので除外）
-    command_ids = set(range(3329, 3584))
     
-    # auto_translates.luaは [id] = {id=xxx, en="...", ja="..."} 形式
-    pattern = re.compile(r'\[(\d+)\]\s*=\s*\{[^}]*en\s*=\s*"([^"]*)"[^}]*ja\s*=\s*"([^"]*)"')
-    for match in pattern.finditer(text):
-        entry_id = int(match.group(1))
-        if entry_id in command_ids:
-            en_value = match.group(2).strip()
-            ja_value = match.group(3).strip()
-            # コマンドは "/"で始まる
-            if en_value.startswith("/"):
-                commands.add(en_value)
-            if ja_value.startswith("/"):
-                commands.add(ja_value)
-    return commands
+    try:
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
+        cursor.execute("SELECT command FROM commands")
+        commands = {row[0] for row in cursor.fetchall()}
+        conn.close()
+        return commands
+    except Exception:
+        return set()
 
 # 優先度順にコマンドリストを構築
 _autotrans_commands = _load_autotrans_commands()
@@ -91,48 +84,36 @@ TARGETS = [
     "<stnpc>",  # サブターゲットNPC
     "<a10>", "<a11>", "<a12>", "<a20>", "<a21>", "<a22>"  # アライアンス
 ]
-RESOURCE_DIR = Path(__file__).resolve().parent / "autotrans_data" / "res"
-_ENTRY_HEADER = re.compile(r"\[\d+\]\s*=\s*{")
-_FIELD_PATTERN = re.compile(r"(\w+)\s*=\s*\"([^\"]*)\"")
-
-
-def _iter_lua_entries(text):
-    for match in _ENTRY_HEADER.finditer(text):
-        start = match.end()
-        depth = 1
-        idx = start
-        length = len(text)
-        while idx < length and depth > 0:
-            char = text[idx]
-            if char == "{":
-                depth += 1
-            elif char == "}":
-                depth -= 1
-            idx += 1
-        yield text[start : idx - 1]
-
-
-def _load_resource_names(filename, type_filter=None):
-    path = RESOURCE_DIR / filename
-    if not path.exists():
+def _load_resource_names_from_db(resource_type, locale=None):
+    """resources.dbからリソース名を読み込む"""
+    db_path = Path(__file__).resolve().parent / "autotrans_data" / "resources.db"
+    if not db_path.exists():
         return set()
-    text = path.read_text(encoding="utf-8", errors="ignore")
-    names = set()
-    for body in _iter_lua_entries(text):
-        fields = {key: value for key, value in _FIELD_PATTERN.findall(body)}
-        entry_type = fields.get("type")
-        if type_filter and entry_type not in type_filter:
-            continue
-        for key in ("en", "ja"):
-            value = fields.get(key)
-            if value:
-                names.add(value)
-    return names
-
-
-def _safe_names(filename, type_filter=None):
+    
     try:
-        return _load_resource_names(filename, type_filter)
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
+        if locale:
+            cursor.execute(
+                "SELECT name FROM resource_names WHERE type = ? AND locale = ?",
+                (resource_type, locale)
+            )
+        else:
+            cursor.execute(
+                "SELECT name FROM resource_names WHERE type = ?",
+                (resource_type,)
+            )
+        names = {row[0] for row in cursor.fetchall()}
+        conn.close()
+        return names
+    except Exception:
+        return set()
+
+
+def _safe_names_from_db(resource_type, locale=None):
+    """resources.dbからリソース名を安全に読み込む（エラー時は空セットを返す）"""
+    try:
+        return _load_resource_names_from_db(resource_type, locale)
     except Exception:
         return set()
 
@@ -154,58 +135,25 @@ def _split_locale_lists(names):
 
 
 JOB_ABILITY_EN, JOB_ABILITY_JA = _split_locale_lists(
-    _safe_names("job_abilities.lua", {"JobAbility"})
+    _safe_names_from_db("JobAbility")
 )
 
 # 条件付きJA（Scholar, CorsairRoll, CorsairShot, Samba, Waltz, Jig, Step, Flourish1~3など）
 CONDITIONAL_JA_EN, CONDITIONAL_JA_JA = _split_locale_lists(
-    _safe_names("job_abilities.lua", {"Scholar", "CorsairRoll", "CorsairShot", "Samba", "Waltz", "Jig", "Step", "Flourish1", "Flourish2", "Flourish3", "Rune", "Ward", "Effusion"})
+    _safe_names_from_db("ConditionalJA")
 )
 
 # ペットコマンド（獣使い・召喚士・からくり士・竜騎士）
 PET_COMMAND_EN, PET_COMMAND_JA = _split_locale_lists(
-    _safe_names("job_abilities.lua", {"PetCommand", "BloodPactRage", "BloodPactWard"})
+    _safe_names_from_db("PetCommand")
 )
 
 WEAPON_SKILL_EN, WEAPON_SKILL_JA = _split_locale_lists(
-    _safe_names("weapon_skills.lua")
+    _safe_names_from_db("WeaponSkill")
 )
 
-_all_magic_names = _safe_names(
-    "spells.lua",
-    {"WhiteMagic", "BlackMagic", "BardSong", "Ninjutsu", "SummonerPact", "BlueMagic", "Geomancy"},
-)
-
-# 定型文の「ウタ」カテゴリ（Songs: ID 7168-7198）を魔法ハイライトに追加
-def _load_autotrans_songs():
-    """定型文から歌のベース名を抽出"""
-    path = RESOURCE_DIR / "auto_translates.lua"
-    if not path.exists():
-        return set()
-    text = path.read_text(encoding="utf-8", errors="ignore")
-    songs = set()
-    # ID 7169-7198 の範囲（7168は「ウタ」カテゴリ名自体なので除外）
-    song_ids = set(range(7169, 7199))
-    
-    # auto_translates.luaは [id] = {id=xxx, en="...", ja="..."} 形式
-    # 正規表現で直接抽出
-    pattern = re.compile(r'\[(\d+)\]\s*=\s*\{[^}]*en\s*=\s*"([^"]*)"[^}]*ja\s*=\s*"([^"]*)"')
-    for match in pattern.finditer(text):
-        entry_id = int(match.group(1))
-        if entry_id in song_ids:
-            en_value = match.group(2)
-            ja_value = match.group(3)
-            # "(Song)" などの注釈を除去
-            clean_en = re.sub(r'\s*\([^)]*\)', '', en_value).strip()
-            clean_ja = re.sub(r'\s*\([^)]*\)', '', ja_value).strip()
-            if clean_en:
-                songs.add(clean_en)
-            if clean_ja:
-                songs.add(clean_ja)
-    return songs
-
-_autotrans_songs = _load_autotrans_songs()
-_all_magic_names = _all_magic_names.union(_autotrans_songs)
+# 魔法（spells.luaから抽出したもの + 定型文の「ウタ」カテゴリ）
+_all_magic_names = _safe_names_from_db("Magic")
 
 # 敵専用魔法を除外（プレイヤーが使えない魔法）
 # 「カーズ」(Curse) や「ウィルス」(Virus) など
@@ -213,14 +161,6 @@ _enemy_only_spells = {"Curse", "カーズ", "Virus", "ウィルス"}
 _all_magic_names = _all_magic_names - _enemy_only_spells
 
 MAGIC_EN, MAGIC_JA = _split_locale_lists(_all_magic_names)
-
-# デバッグ: 歌と忍術が含まれているか確認
-_bard_songs = _safe_names("spells.lua", {"BardSong"})
-_ninjutsu = _safe_names("spells.lua", {"Ninjutsu"})
-if _bard_songs:
-    logger.debug(f"BardSong サンプル: {list(_bard_songs)[:3]}")
-if _ninjutsu:
-    logger.debug(f"Ninjutsu サンプル: {list(_ninjutsu)[:3]}")
 
 class MacroSyntaxHighlighter(QSyntaxHighlighter):
     def __init__(self, parent=None):
@@ -327,17 +267,8 @@ class MacroSyntaxHighlighter(QSyntaxHighlighter):
         self._highlight_name_set(text, lower, PET_COMMAND_EN, PET_COMMAND_JA, self.pet_command_format)
 
         # エラー検出: Shift-JIS換算で60バイトを超える場合
-        try:
-            # FFXIはShift-JIS (cp932)
-            encoded = text.encode("cp932")
-            if len(encoded) > 60:
-                # 60バイトを超える部分を警告表示したいが、
-                # 文字単位でどこから超えるか計算するのは少し複雑。
-                # ここでは行全体に警告下線を引く
-                self.setFormat(0, len(text), self.error_format)
-        except UnicodeEncodeError:
-            # CP932に変換できない文字がある場合も警告
-            self.setFormat(0, len(text), self.error_format)
+        # ここでのハイライトは行わない（QTextEditのExtraSelectionsで処理する）
+        pass
 
     def _highlight_commands(self, text):
         """定義されたコマンドリストに基づいてコマンドをハイライト"""
@@ -471,6 +402,10 @@ class MacroEditor(QTextEdit):
         # 全角スペース自動変換用のフラグ
         self._converting_space = False
         self.textChanged.connect(self._convert_fullwidth_spaces)
+        self.textChanged.connect(self._check_line_errors)
+        
+        # 初回チェック
+        self._check_line_errors()
 
     def insert_completion(self, completion):
         tc = self.textCursor()
@@ -484,6 +419,42 @@ class MacroEditor(QTextEdit):
         tc = self.textCursor()
         tc.select(QTextCursor.SelectionType.WordUnderCursor)
         return tc.selectedText()
+
+    def _check_line_errors(self):
+        """各行の長さをチェックし、エラーがあればExtraSelectionで警告を表示"""
+        selections = []
+        doc = self.document()
+        
+        # エラー警告用のフォーマット
+        error_format = QTextCharFormat()
+        error_format.setUnderlineStyle(QTextCharFormat.UnderlineStyle.WaveUnderline)
+        error_format.setUnderlineColor(QColor("red"))
+        # 背景色や文字色は変更しない（シンタックスハイライトを維持するため）
+        
+        for i in range(doc.blockCount()):
+            block = doc.findBlockByNumber(i)
+            text = block.text()
+            
+            has_error = False
+            try:
+                # FFXIはShift-JIS (cp932)
+                encoded = text.encode("cp932")
+                if len(encoded) > 60:
+                    has_error = True
+            except UnicodeEncodeError:
+                has_error = True
+            
+            if has_error:
+                selection = QTextEdit.ExtraSelection()
+                selection.format = error_format
+                # 行全体を選択
+                selection.cursor = QTextCursor(doc)
+                selection.cursor.setPosition(block.position())
+                selection.cursor.movePosition(QTextCursor.MoveOperation.EndOfBlock, QTextCursor.MoveMode.KeepAnchor)
+                # 行全体に設定（空行の場合は幅ゼロになるが、エラー行は文字があるはず）
+                selections.append(selection)
+        
+        self.setExtraSelections(selections)
 
     def _convert_fullwidth_spaces(self):
         """テキスト変更時に全角スペースを半角に自動変換"""

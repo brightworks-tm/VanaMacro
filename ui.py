@@ -1106,7 +1106,24 @@ class VanaMacroUI(QMainWindow):
         snapshot = self._cursor_snapshot(target)
         dlg = AutoTranslateDialog(self)
         if not dlg.has_data():
-            QMessageBox.information(self, "定型文", "定型文データが見つかりません。")
+            from pathlib import Path
+            db_path = Path(__file__).resolve().parent / "autotrans_data" / "autotrans.db"
+            if not db_path.exists():
+                QMessageBox.warning(
+                    self, 
+                    "定型文", 
+                    f"定型文データベースが見つかりません。\n\n"
+                    f"パス: {db_path}\n\n"
+                    f"autotrans_data/tools/sync_auto_tables.py を実行して\n"
+                    f"データベースを生成してください。"
+                )
+            else:
+                QMessageBox.warning(
+                    self, 
+                    "定型文", 
+                    "定型文データの読み込みに失敗しました。\n\n"
+                    "データベースファイルが破損している可能性があります。"
+                )
             return
         if dlg.exec() != QDialog.DialogCode.Accepted:
             return
