@@ -243,35 +243,32 @@ class MacroSyntaxHighlighter(QSyntaxHighlighter):
         quote_format.setForeground(QColor("#ce9178"))
         self.rules.append((QRegularExpression(r"\".*?\""), quote_format))
 
-        # 4. 定型文 (<< >>) - 括弧の色分け
+        # 4. 定型文 (<< >>) - 括弧の色分け・太字
         trans_start_format = QTextCharFormat()
         trans_start_format.setForeground(QColor("#16B608"))  # 緑色
+        trans_start_format.setFontWeight(QFont.Weight.Bold)
         self.rules.append((QRegularExpression(r"<<"), trans_start_format))
 
         trans_end_format = QTextCharFormat()
         trans_end_format.setForeground(QColor("#C70F0F"))  # 赤色
+        trans_end_format.setFontWeight(QFont.Weight.Bold)
         self.rules.append((QRegularExpression(r">>"), trans_end_format))
 
         # 5. カテゴリ別ハイライト（後段で手動適用）
         self.job_format = QTextCharFormat()
         self.job_format.setForeground(QColor("#797924"))
-        self.job_format.setFontWeight(QFont.Weight.Bold)
 
         self.conditional_ja_format = QTextCharFormat()
         self.conditional_ja_format.setForeground(QColor("#ff8800"))  # オレンジ
-        self.conditional_ja_format.setFontWeight(QFont.Weight.Bold)
 
         self.pet_command_format = QTextCharFormat()
         self.pet_command_format.setForeground(QColor("#ff66cc"))  # ピンク
-        self.pet_command_format.setFontWeight(QFont.Weight.Bold)
 
         self.ws_format = QTextCharFormat()
         self.ws_format.setForeground(QColor("#4ec9b0"))
-        self.ws_format.setFontWeight(QFont.Weight.Bold)
 
         self.magic_format = QTextCharFormat()
         self.magic_format.setForeground(QColor("#c586c0"))
-        self.magic_format.setFontWeight(QFont.Weight.Bold)
 
         # 6. コメント (//...) - 灰色（最優先で上書き）
         comment_format = QTextCharFormat()

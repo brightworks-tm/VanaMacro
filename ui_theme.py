@@ -2,7 +2,6 @@
 Manages UI themes.
 """
 
-from PyQt6.QtGui import QFont, QFontDatabase
 from PyQt6.QtWidgets import QApplication
 
 # Slightly ornate brown/gold palette inspired by RPG UIs.
@@ -19,7 +18,7 @@ QMainWindow {
 QGroupBox {
     background-color: #1f150d;
     border: 1px solid #7b6843;
-    border-radius: 2px;
+    border-radius: 3px;
     margin-top: 8px;
     padding: 8px;
 }
@@ -262,16 +261,132 @@ QMenu::item:selected {
 }
 """
 
-# Minimal styling to fix QMenuBar artifacts in Base theme
+# Base theme - Light theme with system default colors
 BASE_QSS = """
+QWidget {
+    background-color: #ffffff;
+    color: #000000;
+    selection-background-color: #316ac5;
+    selection-color: #ffffff;
+}
+QMainWindow {
+    background-color: #f0f0f0;
+}
+QGroupBox {
+    background-color: #ffffff;
+    border: 1px solid #c0c0c0;
+    border-radius: 3px;
+    margin-top: 8px;
+    padding: 8px;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 6px;
+    padding: 0 4px;
+    color: #000000;
+}
+QPushButton {
+    background-color: #f0f0f0;
+    color: #000000;
+    border: 1px solid #c0c0c0;
+    border-radius: 2px;
+    padding: 6px 10px;
+}
+QPushButton:hover {
+    background-color: #e0e0e0;
+    border-color: #316ac5;
+}
+QPushButton:pressed {
+    background-color: #d0d0d0;
+    color: #000000;
+}
+QPushButton:checked, QPushButton:default {
+    background-color: #316ac5;
+    border-color: #316ac5;
+    color: #ffffff;
+    font-weight: bold;
+}
+QPushButton:disabled {
+    color: #808080;
+    background-color: #f5f5f5;
+    border-color: #d0d0d0;
+}
+QLineEdit, QTextEdit, QPlainTextEdit {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #c0c0c0;
+    selection-background-color: #316ac5;
+    selection-color: #ffffff;
+}
+QListWidget {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #c0c0c0;
+}
+QListWidget::item:selected {
+    background: #316ac5;
+    color: #ffffff;
+}
+QComboBox {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #c0c0c0;
+    padding: 4px 8px;
+}
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+    border-left: 1px solid #c0c0c0;
+}
+QComboBox QAbstractItemView {
+    background-color: #ffffff;
+    color: #000000;
+    selection-background-color: #316ac5;
+    selection-color: #ffffff;
+}
+QSplitter::handle {
+    background-color: #c0c0c0;
+    width: 2px;
+}
+QStatusBar {
+    background-color: #f0f0f0;
+    color: #000000;
+}
+QScrollBar:vertical {
+    background: #f0f0f0;
+    width: 12px;
+    margin: 4px 0 4px 0;
+    border: 1px solid #c0c0c0;
+}
+QScrollBar::handle:vertical {
+    background: #d0d0d0;
+    min-height: 24px;
+    border: 1px solid #c0c0c0;
+}
+QScrollBar::sub-line:vertical, QScrollBar::add-line:vertical {
+    background: #e0e0e0;
+    height: 14px;
+    border: 1px solid #c0c0c0;
+}
 QMenuBar {
     background-color: transparent;
+    color: #000000;
 }
 QMenuBar::item {
     background-color: transparent;
 }
 QMenuBar::item:selected {
     background-color: #cce8ff;
+}
+QMenu {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #c0c0c0;
+}
+QMenu::item:selected {
+    background-color: #316ac5;
+    color: #ffffff;
 }
 """
 
@@ -283,50 +398,13 @@ THEMES = {
 DEFAULT_THEME = "Base"
 
 
-def _store_original_font(app):
-    if not hasattr(app, '_original_font'):
-        app._original_font = app.font()
-
-
-def _apply_game_font(app):
-    """
-    Apply a font that keeps Japanese glyphs intact.
-    """
-    font_order = [
-        "Meiryo UI",
-    ]
-
-    families = set(QFontDatabase.families())
-    chosen = None
-    for family in font_order:
-        if family in families:
-            chosen = family
-            break
-
-    if chosen:
-        base = QFont(chosen)
-        base.setPointSize(max(app.font().pointSize(), 10))
-        app.setFont(base)
-
-
-def _revert_font(app):
-    if hasattr(app, '_original_font'):
-        app.setFont(app._original_font)
-
-
 def apply_theme(app, theme_name):
     """
     Apply the selected theme to the application.
+    All themes use the same font settings (no font changes).
     """
-    _store_original_font(app)
-
     # Remember the active theme on the QApplication so widgets can adjust per-theme accents.
     app.setProperty("vanamacro_theme", theme_name)
 
     qss = THEMES.get(theme_name, "")
     app.setStyleSheet(qss)
-
-    if theme_name == "Game":
-        _apply_game_font(app)
-    else:
-        _revert_font(app)
