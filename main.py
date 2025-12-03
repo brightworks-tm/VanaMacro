@@ -15,9 +15,9 @@ if __name__ == "__main__":
     
     backed_ids = backup_and_prepare_edit()
     if backed_ids:
-        print(f"\u30d0\u30c3\u30af\u30a2\u30c3\u30d7\u6e96\u5099\u5b8c\u4e86: {backed_ids}")
+        print(f"バックアップ準備完了: {backed_ids}")
     else:
-        print("\u6ce8: FFXI USER \u30d5\u30a9\u30eb\u30c0\u304c\u898b\u3064\u304b\u3089\u305a\u3001\u30d0\u30c3\u30af\u30a2\u30c3\u30d7\u3092\u30b9\u30ad\u30c3\u30d7\u3057\u307e\u3057\u305f\u3002")
+        print("注: FFXI USER フォルダが見つからず、バックアップをスキップしました。")
 
     app = QApplication(sys.argv)
 
