@@ -21,7 +21,7 @@ VanaMacro は **日本語** と **英語** の UI に対応しています。
 - `data/backup` … `storage.backup_and_prepare_edit()` が作る世代バックアップ。
 - `data/edit` … バックアップ展開先。取り込み時のテンプレートにも使用。
 - `data/export/<ID>/<timestamp>/` … エクスポート結果（mcr*.dat / mcr.ttl / manifest / JSON スナップショットなど）。
-- `autotrans_data/` … 定型文・アイテム辞書（`autotrans.db`, `resources.db`）と Lua 元データ。
+- `autotrans_data/` … 定型文・アイテム辞書（`autotrans.db`, `resources.db`）と、`tools/`（`sync_auto_tables.py`, `sync_resources.py`）。
 
 ## 起動と基本フロー
 1) `main.py` を起動すると、FFXI USER フォルダがあればバックアップ＋展開（なければスキップ）。  
