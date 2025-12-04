@@ -49,6 +49,7 @@ config.json
 
 # Generated files
 autotrans_data/autotrans.db
+autotrans_data/res/
 
 # Sample/Debug files
 *_sample.txt
