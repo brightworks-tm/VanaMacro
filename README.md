@@ -24,7 +24,17 @@ VanaMacro は **日本語** と **英語** の UI に対応しています。
 - `autotrans_data/` … 定型文・アイテム辞書（`autotrans.db`, `resources.db`）と、`tools/`（`sync_auto_tables.py`, `sync_resources.py`）。
 
 ## 起動と基本フロー
-1) `main.py` を起動すると、FFXI USER フォルダがあればバックアップ＋展開（なければスキップ）。  
+
+### 起動方法
+FFXI USER フォルダ（`C:\Program Files (x86)\...`）へのコピーには**管理者権限**が必要です。  
+以下のいずれかの方法で起動してください：
+
+- **`VanaMacro.vbs`**（推奨）: ダブルクリックで管理者権限付きで起動。コンソールウィンドウが出ません。
+- **`run_admin.bat`**: 右クリック→「管理者として実行」。コンソールウィンドウが残ります。
+- **`python main.py`**: 管理者権限のコマンドプロンプトから実行。
+
+### 基本フロー
+1) 起動すると、FFXI USER フォルダがあればバックアップ＋展開（なければスキップ）。  
 2) UI でキャラを選択すると `macros_<id>.json` を読み込み、Book/Set/マクロを表示。保存先も常にこの JSON。  
 3) 必要に応じてエクスポートセンターから `.dat` / `.ttl` を生成し、FFXI USER へコピー（上書き確認あり）。
 
