@@ -128,7 +128,7 @@ _TEXTS = {
         
         # About dialog
         "about_title": "VanaMacro",
-        "about_text": "VanaMacro v1.0.0\n\nMacro Editor for Final Fantasy XI\n\n© 2025 VanaMacro Project\n\nPython 3.13+ / PyQt6\nhttps://github.com/your-repo/VanaMacro",
+        "about_text": "VanaMacro v1.2.0\n\nMacro Editor for Final Fantasy XI\n\n© 2025 VanaMacro Project\n\nPython 3.13+ / PyQt6\nhttps://github.com/brightworks-tm/VanaMacro",
         
         # Shortcuts dialog
         "action_shortcuts": "ショートカット一覧...",
@@ -336,7 +336,7 @@ Ctrl+T : 定型文リスト""",
         
         # About dialog
         "about_title": "VanaMacro",
-        "about_text": "VanaMacro v1.0.0\n\nMacro Editor for Final Fantasy XI\n\n© 2025 VanaMacro Project\n\nPython 3.13+ / PyQt6\nhttps://github.com/your-repo/VanaMacro",
+        "about_text": "VanaMacro v1.2.0\n\nMacro Editor for Final Fantasy XI\n\n© 2025 VanaMacro Project\n\nPython 3.13+ / PyQt6\nhttps://github.com/brightworks-tm/VanaMacro",
         
         # Shortcuts dialog
         "action_shortcuts": "Keyboard Shortcuts...",

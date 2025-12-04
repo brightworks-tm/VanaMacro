@@ -5,6 +5,17 @@ All notable changes to VanaMacro will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2025-12-04
+
+### Added
+- `VanaMacro.vbs` - 管理者権限でコンソールなしで起動するスクリプト（推奨）
+- README: 起動方法の説明を追加
+- README: 初回起動時の注意（FFXIから取り込みが必要）を追加
+- README: マクロの反映タイミング（ログアウト→コピー→ログイン）の説明を追加
+
+### Removed
+- `run_admin.bat` - VanaMacro.vbsで代替
+
 ## [1.1.0] - 2025-12-02
 
 ### Changed
