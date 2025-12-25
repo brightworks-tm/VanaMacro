@@ -1,0 +1,89 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# Virtual Environments
+venv/
+.venv/
+env/
+.env
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-*
+
+# Project Specific - Backup files
+*_backup.py
+*_backup_*.py
+*_backup.ini
+*_backup_*.json
+*.bak
+backup/
+
+# Project Specific - Temporary files
+*.log
+tmp*
+temp*
+debug.log
+
+# Project Specific - Build artifacts
+*.spec
+dist/
+build/
+
+# Project Specific - Workspace files
+*.code-workspace
+*.lps
+
+# User Data (personal/local)
+macros/
+macros.json
+names.ini
+config.json
+
+# Generated files
+autotrans_data/autotrans.db
+autotrans_data/res/
+
+# Sample/Debug files
+*_sample.txt
+general_first.txt
+line_sample.txt
+test_value.txt
+decoded_sample.txt
+
+# Data directories (user-specific)
+data/
+
+# Development notes (optional)
+resource_extractor_notes.md
+
+# Japanese documentation (keep README.md and CHANGELOG.md)
+エクスポート機能ガイド.md
+検証結果報告.md
+英語版実装*.md
+SQLite移行検証レポート.md
+
+# Old backup files
+.gitignore_backup
+
+# Test files
+test_*.py
+
+# Development/Debug tools
+analyze_*.py
+compare_*.py
+detail_diff.py
+detect_moji.py
+final_verification.py
+find_non_ascii.py
+full_comparison.py
+patch_import.py
+verify_ttl.py
+convert_ui.py
