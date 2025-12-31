@@ -75,6 +75,8 @@ SQLite移行検証レポート.md
 
 # Test files
 test_*.py
+git_log_check.txt
+git_ls_files_check.txt
 
 # Development/Debug tools
 analyze_*.py
