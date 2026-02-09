@@ -76,18 +76,53 @@ class AutoTranslateDecoder:
         return self._item_map
 
     def _ensure_general_reverse(self) -> Dict[str, Tuple[int, int]]:
+        """両方の言語（日本語・英語）の逆引き辞書を作成
+
+        これにより、言語設定に関係なく日本語でも英語でも
+        定型文を正しくエンコードできるようになります。
+        """
         if self._general_reverse is None:
             reverse: Dict[str, Tuple[int, int]] = {}
-            for key, value in self._ensure_general().items():
-                reverse.setdefault(value, key)
+            try:
+                conn = _get_db_connection()
+                cursor = conn.cursor()
+                cursor.execute("SELECT category_id, entry_id, ja, en FROM auto_translates")
+                for cat, entry, ja_text, en_text in cursor.fetchall():
+                    key = (cat, entry)
+                    if ja_text:
+                        reverse.setdefault(ja_text, key)
+                    if en_text:
+                        reverse.setdefault(en_text, key)
+                conn.close()
+            except Exception:
+                # フォールバック: 現在の言語のみ
+                for key, value in self._ensure_general().items():
+                    reverse.setdefault(value, key)
             self._general_reverse = reverse
         return self._general_reverse
 
     def _ensure_item_reverse(self) -> Dict[str, int]:
+        """両方の言語（日本語・英語）のアイテム逆引き辞書を作成
+
+        これにより、言語設定に関係なく日本語でも英語でも
+        アイテム定型文を正しくエンコードできるようになります。
+        """
         if self._item_reverse is None:
             reverse: Dict[str, int] = {}
-            for key, value in self._ensure_items().items():
-                reverse.setdefault(value, key)
+            try:
+                conn = _get_db_connection()
+                cursor = conn.cursor()
+                cursor.execute("SELECT id, ja, en FROM items")
+                for item_id, ja_text, en_text in cursor.fetchall():
+                    if ja_text:
+                        reverse.setdefault(ja_text, item_id)
+                    if en_text:
+                        reverse.setdefault(en_text, item_id)
+                conn.close()
+            except Exception:
+                # フォールバック: 現在の言語のみ
+                for key, value in self._ensure_items().items():
+                    reverse.setdefault(value, key)
             self._item_reverse = reverse
         return self._item_reverse
 
@@ -295,7 +330,7 @@ def load_autotrans_tree() -> List[Dict[str, List[str]]]:
 
 def reload_dictionaries() -> None:
     """辞書をリロード（言語変更時に使用）
-    
+
     言語設定を変更した後、この関数を呼び出すことで
     キャッシュされた辞書データをクリアし、次回アクセス時に
     新しい言語でデータを再読み込みします。
@@ -308,6 +343,28 @@ def reload_dictionaries() -> None:
     _DECODER._item_reverse = None
 
 
+def normalize_to_current_language(text: str) -> str:
+    """定型文テキストを現在の言語設定に正規化
+
+    <<Vallation>> → <<ヴァレション>> (言語設定が ja の場合)
+    <<スニーク>> → <<Sneak>> (言語設定が en の場合)
+
+    定型文として認識できないテキストはそのまま保持されます。
+
+    Args:
+        text: 正規化するマクロテキスト
+
+    Returns:
+        現在の言語設定に正規化されたテキスト
+    """
+    if not text:
+        return text
+
+    # バイナリトークンにエンコード → 現在の言語でデコード
+    encoded = _DECODER.encode_text(text)
+    return _DECODER.decode_bytes(encoded)
+
+
 __all__ = [
     "decode_macro_bytes",
     "decode_macro_text",
@@ -315,4 +372,5 @@ __all__ = [
     "AutoTranslateDecoder",
     "load_autotrans_tree",
     "reload_dictionaries",
+    "normalize_to_current_language",
 ]

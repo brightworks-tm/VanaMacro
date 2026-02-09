@@ -82,18 +82,53 @@ class SettingsDialog(QDialog):
         from config import Config
         selected_lang = self.lang_combo.currentData()
         current_lang = Config.get_language()
-        
+
         if selected_lang != current_lang:
+            # 言語設定を変更
             Config.set_language(selected_lang)
-            Config.save()  # 設定を保存
+            Config.save()
             self._language_changed = True
-            
-            # 言語変更完了メッセージ（即時反映される）
-            QMessageBox.information(
-                self,
-                get_text("dlg_settings_title"),
-                get_text("msg_lang_changed")
-            )
+
+            # 辞書キャッシュをリロード
+            try:
+                from ffxi_autotrans import reload_dictionaries
+                reload_dictionaries()
+            except ImportError:
+                pass
+
+            # 親ウィンドウからリポジトリを取得して正規化を実行
+            normalized_count = 0
+            parent = self.parent()
+            if parent and hasattr(parent, "repo") and parent.repo is not None:
+                # 確認ダイアログ
+                reply = QMessageBox.question(
+                    self,
+                    get_text("dlg_settings_title"),
+                    get_text("msg_normalize_confirm"),
+                    QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+                    QMessageBox.StandardButton.Yes,
+                )
+                if reply == QMessageBox.StandardButton.Yes:
+                    normalized_count = parent.repo.normalize_autotrans(save=True)
+                    # UI を更新（エディタ、ボタンラベル等）
+                    if hasattr(parent, "_reload_current_macro_into_editor"):
+                        parent._reload_current_macro_into_editor()
+                    if hasattr(parent, "_refresh_macro_button_labels"):
+                        parent._refresh_macro_button_labels()
+
+            # 完了メッセージ
+            if normalized_count > 0:
+                QMessageBox.information(
+                    self,
+                    get_text("dlg_settings_title"),
+                    get_text("msg_lang_changed_with_normalize").format(count=normalized_count)
+                )
+            else:
+                QMessageBox.information(
+                    self,
+                    get_text("dlg_settings_title"),
+                    get_text("msg_lang_changed")
+                )
     
     def _on_ok(self):
         """OKボタンのハンドラ"""

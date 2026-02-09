@@ -286,6 +286,37 @@ class MacroRepository:
         if save:
             self.save()
 
+    def normalize_autotrans(self, save: bool = True) -> int:
+        """全マクロの定型文を現在の言語設定に正規化
+
+        <<Vallation>> → <<ヴァレション>> (言語設定が ja の場合)
+        <<スニーク>> → <<Sneak>> (言語設定が en の場合)
+
+        Args:
+            save: 正規化後にJSONを保存するかどうか
+
+        Returns:
+            変換されたマクロ行の数
+        """
+        try:
+            from ffxi_autotrans import normalize_to_current_language
+        except ImportError:
+            return 0
+
+        changed_count = 0
+        for book in self.books:
+            for macro_set in book.sets:
+                for macro in macro_set.ctrl + macro_set.alt:
+                    for i, line in enumerate(macro.lines):
+                        if line:
+                            normalized = normalize_to_current_language(line)
+                            if normalized != line:
+                                macro.lines[i] = normalized
+                                changed_count += 1
+        if save and changed_count > 0:
+            self.save()
+        return changed_count
+
 
 class MacroController:
     """Thin helper that UI code can use without depending on PyQt."""

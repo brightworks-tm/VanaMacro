@@ -74,6 +74,8 @@ _TEXTS = {
         "msg_save_success": "保存しました。",
         "msg_unsaved_changes": "未保存の変更があります。保存しますか？",
         "msg_lang_changed": "言語設定を変更しました。",
+        "msg_lang_changed_with_normalize": "言語設定を変更しました。\n\n定型文の変換: {count} 行",
+        "msg_normalize_confirm": "定型文の表記を新しい言語に変換しますか？\n\n例: <<Vallation>> → <<ヴァレション>>\n\n※ 元に戻すにはFFXIから再取り込みが必要です",
         "msg_restart_required": "変更を完全に反映するには、ツールを再起動してください。",
         
         # エクスポートセンター
@@ -128,7 +130,7 @@ _TEXTS = {
         
         # About dialog
         "about_title": "VanaMacro",
-        "about_text": "VanaMacro v1.2.0\n\nMacro Editor for Final Fantasy XI\n\n© 2025 VanaMacro Project\n\nPython 3.13+ / PyQt6\nhttps://github.com/brightworks-tm/VanaMacro",
+        "about_text": "VanaMacro v1.3.0\n\nMacro Editor for Final Fantasy XI\n\n© 2026 VanaMacro Project\n\nPython 3.13+ / PyQt6\nhttps://github.com/brightworks-tm/VanaMacro",
         
         # Shortcuts dialog
         "action_shortcuts": "ショートカット一覧...",
@@ -282,6 +284,8 @@ Ctrl+T : 定型文リスト""",
         "msg_save_success": "Saved successfully.",
         "msg_unsaved_changes": "You have unsaved changes. Save them?",
         "msg_lang_changed": "Language settings changed.",
+        "msg_lang_changed_with_normalize": "Language settings changed.\n\nAuto-translate converted: {count} lines",
+        "msg_normalize_confirm": "Convert auto-translate text to the new language?\n\nExample: <<ヴァレション>> → <<Vallation>>\n\n※ To revert, re-import from FFXI",
         "msg_restart_required": "Please restart the application to apply the changes.",
         
         # Export Center
