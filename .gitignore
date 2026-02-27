@@ -31,6 +31,7 @@ backup/
 tmp*
 temp*
 debug.log
+vana_export_*/
 
 # Project Specific - Build artifacts
 *.spec
